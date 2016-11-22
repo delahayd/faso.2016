@@ -2,7 +2,7 @@
 | GROUPE 1 |
 - Groupe Achraf ELMAHMOUDI Cyprien LEGRAND => Domotique et sécurité // Surveillance habitation avec capteurs en wifi
 - Groupe Alexandre BOTTERO Vincent HERREROS => Machine à cocktails
-- Groupe Cyril PLUCHE Romain Thevenon => Machine à plier le linge (ou à nourrir les chats)
+- Groupe Cyril PLUCHE Romain Thevenon => Piano invisible + affichage sur écran
 - Groupe Mégane Wintz Loïc Combis => Projet Thalès Espace
 - Groupe Ophelie PIEKAREK Enzo FABRE => Projet d'aide aux aveugles
 - Groupe Joris GRANEL Justin ESCALIER => A determiner
