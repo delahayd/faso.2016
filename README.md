@@ -25,3 +25,4 @@
 - Groupe Kévin Hassan et Godefroi Roussel => Encombrement des salles et optimisation du chemin à suivre en fonction de l'encombrement
 - Groupe Assil EL YAHYAOUI et Lucie TRUONG => Projet NAO
 - Groupe Chloé DALGER et Mahé SPAENLE => Photo Booth 
+- Groupe Maxime SOUSTELLE et Kévin GIORDANI => Projet de Guidage dans le musée
