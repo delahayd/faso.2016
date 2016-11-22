@@ -11,6 +11,7 @@ Mais aussi le public pourra relancer l'explication, faire pause etc... ou reveni
 Devant l'oeuvre sera installé un capteur de distance pour vérifier si une personne est présente ou non
 devant l'oeuvre. Si une personne est présente on intéragie avec elle, sinon on attend en essayant d'attirer les gens qui pourraient être autour.
 Ces intéractions seront gérés par des capteurs de mouvements et/ou de boutons.
+De plus on ajoutera des petits jeux en lien avec l'oeuvre choisie
 
 Scénarios nominaux:
   - Personne se trouve devant le tableau, aucune explication n'est donnée et une musique d'ambiance est lancée (exemple) et
