@@ -1,0 +1,8 @@
+sudo pocketsphinx_continuous -hmm /usr/local/share/pocketsphinx/model/en-us/en-us -lm /usr/local/share/pocketsphinx/model/en-us/en-us/1802.lm -dict /usr/local/share/pocketsphinx/model/en-us/en-us/1802.dic -samprate 16000/8000/48000 -inmic yes
+
+
+
+/home/pi/Desktop/ProjetFas/faso/g2/mellah-terrien/vocal_speech/
+
+
+sudo pocketsphinx_continuous -hmm /usr/local/share/pocketsphinx/model/en-us/en-us -lm /home/pi/Desktop/ProjetFas/faso/g2/mellah-terrien/vocal_speech/0431.lm -dict /home/pi/Desktop/ProjetFas/faso/g2/mellah-terrien/vocal_speech/0431.dic -samprate 16000/8000/48000 -inmic yes

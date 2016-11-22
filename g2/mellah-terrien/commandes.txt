@@ -1,0 +1,3 @@
+MISE EN PLACE GROVE PI : 
+
+sudo i2cdetect -y 1   => check that the Raspberry Pi is able to detect the Grove pi

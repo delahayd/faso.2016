@@ -1,0 +1,14 @@
+Example of similar project measuring alcohol:
+Arduino + MQ3 : http://www.instructables.com/id/Arduino-Breathalyzer/step3/The-Code/
+
+Example of weight scale:
+Adruino + hx711 : http://www.instructables.com/id/Make-your-weighing-scale-hack-using-arduino/step3/Connecting-sensor-to-Arduino/
+
+
+Matériels :
+Arduino Uno
+Hx711 amplifier (https://www.sparkfun.com/products/13879)
+Load cell 50kg x2 (https://www.sparkfun.com/products/10245)
+touch screen (https://www.adafruit.com/products/1947)
+
+Une plaque pour installer les cellules en dessous. 
