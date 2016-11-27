@@ -8,3 +8,10 @@ Nous souhaitons activer une fonction de reconnaissance vocal pour la désactivat
 L'objectif serait d'utiliser un capteur de mouvement à ultrasons, un autre capteur micro et un haut parleur. Enfin si possible, l'utilisation d'une webcam serait un plus. 
 
 Afin de ne pas avoir trop de difficulté avec la reconnaissance vocal, nous imposerions l'utilisation de chiffre dans le code de déverouillage. 
+
+
+MAJ : Afin de pouvoir avancer librement dans ce projet, nous avons investi dans du matériel (raspberry, grovePi et capteurs). Voici notre objectif final: 
+
+Concevoir une centrale de surveillance domotique. Lorsque l'utilisateur rentre dans le domicile, les capteurs detectent un mouvement enclenchent le système. Le propriétaire a la possibilité de dévérouiller l'alarme par commande vocale avec un code numérique, il disposera de 3 essais. Si il n'est pas reconnu il a accés à un pavé numérique, avec deux dernières chances de déverouiller l'alarme. En cas d'echec de tous ces essais, le propriétaire sera averti via sms ou email, un buzzer se déclanchera afin de dissuader l'inconnu.  
+
+ 
