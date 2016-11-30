@@ -1,0 +1,65 @@
+#include <Wire.h>
+#include "rgb_lcd.h"
+
+rgb_lcd lcd;
+
+const int colorR = 255;
+const int colorG = 0;
+const int colorB = 0;
+int mq3AnalogPin = A0;
+int button = A1;
+bool button_status = false;
+
+// TODO make program that will tell person to press button to start the program
+// which will tell person to blow when the light is red until the light is green (until value is stable maybe?)
+// then give advices on what to do, drink more or stay
+
+
+void setup() 
+{
+    // set up the LCD's number of columns and rows:
+    lcd.begin(16, 2);
+    
+    Serial.begin(9600); // open serial at 9600 bps
+    
+    lcd.setRGB(colorR, colorG, colorB);
+    
+    // Print a message to the LCD.
+    lcd.print("Soufflez");
+
+    delay(1000);
+}
+
+void loop() 
+{
+    // set the cursor to column 0, line 1
+    // (note: line 1 is the second row, since counting begins with 0):
+    lcd.setCursor(0, 1);
+    // print the number of seconds since reset:
+  int mq3ValueTot = 0;
+
+  //count the average value of alcohol
+  for (int i; i<100; i++) {
+      mq3ValueTot = mq3ValueTot + analogRead(mq3AnalogPin);
+      delay(10);
+  }
+  int avAlcValue = mq3ValueTot / 100;
+
+  
+  
+  // give ample warmup time for readings to stabilize
+
+  lcd.print(avAlcValue);
+
+  delay(100); //Just here to slow down the output.
+
+  button_status = digitalRead(button);
+  if (button_status) {
+    lcd.print("Button pressed");
+  }
+  
+}
+
+/*********************************************************************************************************
+  END FILE
+*********************************************************************************************************/
