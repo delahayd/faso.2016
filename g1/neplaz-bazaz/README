@@ -1,6 +1,4 @@
 Bazaz Amin, Neplaz Thomas
 
-Appareil permettant à l'utilisateur de savoir s'il a une baisse
-ou une augmentation de cadence lors d'une course à pied.
-L'alerte est sous forme sonore et récupération des données présentées sous
-forme de graphique.
+Appareil permettant à l'utilisateur de contrôler la température et humidité dans une salle serveur.
+L'alerte est sous forme de mail.
