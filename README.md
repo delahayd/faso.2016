@@ -9,7 +9,7 @@
 - Groupe Ophelie PIEKAREK Enzo FABRE => Projet d'aide aux aveugles / robot souris pour chat
 - Groupe Hamelina Julia EHAMELO Jade HENNEBERT => déchet basket (campagne propreté)
 - Groupe Ophelie PIEKAREK Enzo FABRE => Projet d'aide aux aveugles / robot souris pour chat
-- Groupe Amin BAZAZ Thomas NEPLAZ => Projet contrôle de vitesse en course à pied
+- Groupe Amin BAZAZ Thomas NEPLAZ => Projet contrôle de température et humidité dans une salle serveur
 - Groupe Hamelina Julia EHAMELO Jade HENNEBERT => déchet basket (campagne propreté)
 - Groupe Xeryus MAUGUY Fabien TURGUT => Organisation Nutritionelle Améliorée
 - Groupe Yves-alain AGBODJOGBE Mehdi DELVAUX => Ambiance lumineuse par rapport au niveau sonore (Appel a projet Musée Fabre)
