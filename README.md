@@ -26,3 +26,4 @@
 - Groupe Assil EL YAHYAOUI et Lucie TRUONG => Projet NAO
 - Groupe Chloé DALGER et Mahé SPAENLE => Photo Booth 
 - Groupe Maxime SOUSTELLE et Kévin GIORDANI => Projet de Guidage dans le musée
+- Groupe Melvil DONNART et Hugo MAITRE => Projet présentation oeuvre et quizz
