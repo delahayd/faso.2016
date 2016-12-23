@@ -1,0 +1,1 @@
+/home/kash/fasproject/tools/raspicam-0.1.3/src/build/CMakeFiles/Project.dir

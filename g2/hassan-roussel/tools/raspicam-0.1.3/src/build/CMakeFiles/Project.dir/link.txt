@@ -1,0 +1,2 @@
+/usr/bin/ar cr libProject.a  CMakeFiles/Project.dir/raspicam.o CMakeFiles/Project.dir/raspicam_still.o CMakeFiles/Project.dir/private/private_impl.o CMakeFiles/Project.dir/private/threadcondition.o CMakeFiles/Project.dir/private_still/private_still_impl.o
+/usr/bin/ranlib libProject.a
