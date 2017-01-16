@@ -1,10 +1,11 @@
 <?php
+  require_once("../function/function.php");
 	if(isset($_POST["action"]) && $_POST["action"] == "ADD"){
 		if($_POST["name"] == ""){
 			header("location:../views/carte.php?erreur=PSEUDO_EMPTY");
 		}
 		else {
-			$bdd = new PDO("");
+			$bdd = get_bdd();
 			$req = $bdd->query("SELECT * FROM Users WHERE user_name='".$_POST["name"]."'");
 			$res = $req->fetchAll();
 			if(count($res)>0){
@@ -12,21 +13,22 @@
 			}
 			else{
 				$req = $bdd->prepare("INSERT INTO Users(user_id,user_name) VALUES(?,?)");
-				$res = $req->execute(array("user_id" => '',"user_name" => $_POST["name"]));
+			     $res = $req->execute(array('',$_POST["name"]));
 				if($res){
 					header("location:../views/carte.php?erreur=AUCUNE");
 				}
 				else{
 					header("location:../views/carte.php?erreur=INCONNUE");
 				}
-			} 
+			}
 		}
 	}
 	else if(isset($_POST["action"]) && $_POST["action"] == "GET"){
-		$bdd = new PDO("");
+		$bdd = get_bdd();
 		$req = $bdd->query("SELECT * FROM Positions WHERE position_user='".$_POST["select"]."'");
 		$res = $req->fetchAll();
 		echo json_encode($res);
+    header("location:../views/carte.php");
 	}
-	
+
 ?>

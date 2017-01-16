@@ -1,0 +1,29 @@
+html,body{
+	margin:0px;
+	padding:0px;
+  text-align:center;
+}
+form{
+  display: inline-block;
+}
+#map{
+	height:500px;
+	width:90%;
+}
+.succes_message,.error_message{
+  width:300px;
+  margin: auto;
+  text-align: center;
+  padding:10px;
+  border: solid 1px;
+}
+.succes_message{
+  border-color: rgba(0,255,0,1);
+  background-color: rgba(0,255,0,0.4);
+  color:rgba(0,255,0,1);
+}
+.error_message{
+  border-color: rgba(255,0,0,1);
+  background-color: rgba(255,0,0,0.6);
+  color:rgba(255,0,0,1);
+}
