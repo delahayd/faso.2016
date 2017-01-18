@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 // http://paristech.institutoptique.fr/site.php?id=469&fileid=2739
@@ -22,10 +23,17 @@ void main() {
     fclose(fichier);
   }
   /*On construit la chaine de caractère pour l'utiliser en ligne de commande */
-  char commandLine = "curl --data \"action=SEND_POS&user=Lolo&lat=";
-  strcat(commandLine,tab[0]);
+  char commandLine[43] = "curl --data \"action=SEND_POS&user=Lolo&lat=";
+  char lat[15];
+  char lng[15];
+  sprintf(lat,"%lf",tab[0]);
+  sprintf(lng,"%lf",tab[1]);
+  strcat(commandLine,lat);
   strcat(commandLine,"&lng=");
-  strcat(commandLine,tab[1]);
+  strcat(commandLine,lng);
+  char date[5] = "today";
+  strcat(commandLine,"&date=");
+  strcat(commandLine,date);
   strcat(commandLine,"\" http://www.wintz-combis.16mb.com/Application_Web/controleur/controleur-carte.php");
 
   //on envoi la requete POST sur le serveur.
