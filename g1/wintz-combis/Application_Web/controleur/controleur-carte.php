@@ -30,13 +30,14 @@
 		echo json_encode($res);
     header("location:../views/carte.php");
 	}
-  else if(isset($_GET["action"] && $_GET["action"] == "SEND_POS")){
+
+  else if(isset($_POST["action"]) && $_POST["action"] == "SEND_POS"){
     /**
     * @var $_GET contient une requette get envoyé via curl depuis un raspberry.
     **/
     $bdd = get_bdd();
     $req = $bdd->prepare("INSERT INTO Positions(position_id,position_lat,position_lng,position_date,position_user) VALUES(?,?,?,?,?)");
-    $res = $req->execute(array('',$_GET["lat"],$_GET["lng"],$_GET["date"],$_GET["user"]));
+    var_dump($res = $req->execute(array('',$_POST["lat"],$_POST["lng"],$_POST["date"],$_POST["user"])));
     if($res){
       echo "La position a bien été enregistrée dans la base de donnée";
     }
@@ -44,5 +45,7 @@
       echo "Désolé mais une erreur est survenue lors de l'insertion de la position";
     }
   }
+  var_dump($_GET);
+  var_dump($_POST);
 
 ?>
