@@ -23,12 +23,11 @@
 			}
 		}
 	}
-	else if(isset($_POST["action"]) && $_POST["action"] == "GET"){
+	else if(isset($_GET["action"]) && $_GET["action"] == "GET"){
 		$bdd = get_bdd();
-		$req = $bdd->query("SELECT * FROM Positions WHERE position_user='".$_POST["select"]."'");
+		$req = $bdd->query("SELECT * FROM Positions WHERE position_user='".$_GET["select"]."'");
 		$res = $req->fetchAll();
 		echo json_encode($res);
-    header("location:../views/carte.php");
 	}
 
   else if(isset($_POST["action"]) && $_POST["action"] == "SEND_POS"){
@@ -45,7 +44,6 @@
       echo "Désolé mais une erreur est survenue lors de l'insertion de la position";
     }
   }
-  var_dump($_GET);
-  var_dump($_POST);
+
 
 ?>

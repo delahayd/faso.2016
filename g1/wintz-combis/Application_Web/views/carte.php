@@ -13,8 +13,7 @@
         }
       </style>
 	</head>
-	<body onload="initMap()">
-
+	<body onload="initMap(false,'coucou')">
 		<h1>Carte de Tracking du raspberry</h1>
     <?php
       if(isset($_GET["erreur"]) && $_GET["erreur"] == "PSEUDO_VIDE"){
@@ -30,16 +29,13 @@
         echo "<div class='error_message'><p>Le pseudo est déjà prit</p></div>";
       }
     ?>
-		<form action="../controleur/controleur-carte.php" method="POST">
       <label>Utilisateur courant </label>
 			<?php
         require_once("../function/function.php");
         echo affiche_select_utilisateur();
       ?>
       <br/>
-      <input type="submit" value="Afficher le Parcours">
-			<input type="hidden" name="action" value="GET">
-		</form>
+      <button type="button" onclick="afficherPos()">Afficher Le Parcours</button>
 
     <form action="../controleur/controleur-carte.php" method="POST">
 			<label for="name">Ajouter un nouvel utilisateur</label><br/>
