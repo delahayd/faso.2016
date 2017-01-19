@@ -1,1 +1,0 @@
-linear_extrude(height=2)import("camera_mount.dxf");
