@@ -43,7 +43,6 @@ def setup_google():
 
     out = True
     try:
-        # Create a client class which will make HTTP requests with Google Docs server.
         configdir = os.path.expanduser('./')
         client_secrets = os.path.join(configdir, 'OpenSelfie.json')
         credential_store = os.path.join(configdir, 'credentials.dat')
@@ -60,10 +59,6 @@ def setup_google():
 
 def countdown(camera, can, countdown1):
     camera.start_preview()
-    # camera.start_preview(fullscreen=False,
-    #                     crop=(50, 150, 800, 480),
-    #                      window=(0, 0, 800, 480),
-    #                      hflip=True)
     can.delete("image")
     led_state = False
     safe_set_led(camera, led_state)
@@ -91,17 +86,11 @@ def countdown(camera, can, countdown1):
     can.update()
     camera.stop_preview()
 
-def setLights(r, g, b):
-#    ser = findser()
-    rgb_command = 'c%s%s%s' % (chr(r), chr(g), chr(b))
-#    ser.write(rgb_command)
-
 def snap(can, countdown1, effect='None'):
     global image_idx
 
     try:
         if custom.ARCHIVE and os.path.exists(custom.archive_dir) and os.path.exists(custom.PROC_FILENAME):
-            ### copy image to archive
             image_idx += 1
             new_filename = os.path.join(custom.archive_dir, '%s_%05d.%s' % (custom.PROC_FILENAME[:-4], image_idx, custom.EXT))
             command = (['cp', custom.PROC_FILENAME, new_filename])
@@ -112,8 +101,6 @@ def snap(can, countdown1, effect='None'):
             camera.capture(custom.RAW_FILENAME, resize=(1366, 768))
             snapshot = Image.open(custom.RAW_FILENAME)
         elif effect == 'Warhol': 
-            #  set light to R, take photo, G, take photo, B, take photo, Y, take photo
-            # merge results into one image
             setLights(255, 0, 0) ## RED
             camera.capture(custom.RAW_FILENAME[:-4] + '_1.' + custom.EXT, resize=(683, 384))
             setLights(0, 255, 0) ## GREEN
@@ -166,13 +153,10 @@ def snap(can, countdown1, effect='None'):
 snap.active = False
 
 
-if custom.ARCHIVE: ### commented out... use custom.customizer instead
-    # custom.archive_dir = tkFileDialog.askdirectory(title="Choose archive directory.", initialdir='/media/')
+if custom.ARCHIVE: 
     if not os.path.exists(custom.archive_dir):
         print 'Directory not found.  Not archiving'
         custom.ARCHIVE = False
-    elif not os.path.exists(custom.archive_dir): ## not used
-        os.mkdir(custom.archive_dir)
     image_idx = len(glob.glob(os.path.join(custom.archive_dir, '%s_*.%s' % (custom.PROC_FILENAME[:-4], custom.EXT))))
 
 SERIAL = None
@@ -185,7 +169,6 @@ def findser():
 
 
 def googleUpload(filen):
-    #upload to picasa album
     if custom.albumID != 'None':
         album_url ='/data/feed/api/user/%s/albumid/%s' % (config.username, custom.albumID)
         photo = client.InsertPhotoSimple(album_url,'NoVa Snap',custom.photoCaption, filen ,content_type='image/jpeg')
