@@ -1,13 +1,3 @@
-"""
-A simple screen grabbing utility
-
-@author Fabio Varesano - 
-@date 2009-03-17
-@modified by Justin Shaw
---- Changed filename to date
---- converted to linux
-"""
-
 
 import pyscreenshot as ImageGrab
 import time

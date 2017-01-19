@@ -41,9 +41,9 @@ oauth2_refresh_period = 1800000
     conf = ConfigParser.ConfigParser()
     conf.read(conf_filename)
 
-    emailSubject = conf.get('main', 'emailSubject') # "Your Postcard from the Wyolum Photobooth"
-    emailMsg = conf.get('main', 'emailMsg') # "Here's your picture from the http://wyolum.com photobooth!"
-    logopng = conf.get('main', 'logopng') # "logo.png"
+    emailSubject = conf.get('main', 'emailSubject') 
+    emailMsg = conf.get('main', 'emailMsg')
+    logopng = conf.get('main', 'logopng')
 
     if os.path.exists(logopng):
         logo = Image.open(logopng)
@@ -53,21 +53,21 @@ oauth2_refresh_period = 1800000
         lxsize = 0
         lysize = 0
 
-    photoCaption = conf.get('main', 'photoCaption') # "postcard from the xxxx event"
-    albumID = conf.get('main', 'albumID') # None ### Put your own album ID here in single quotes like '5991903863088919889'
+    photoCaption = conf.get('main', 'photoCaption') 
+    albumID = conf.get('main', 'albumID')
 
-    countdown1 = int(conf.get('main', 'countdown1')) # 5 ## how many seconds to count down before a photo is taken
-    countdown2 = int(conf.get('main', 'countdown2')) # 3 ## how many seconds to count down before subsequent photos are taken
+    countdown1 = int(conf.get('main', 'countdown1')) 
+    countdown2 = int(conf.get('main', 'countdown2'))
 
-    TIMELAPSE = float(conf.get('main', 'TIMELAPSE')) # 0 ## use 0 for no time lapse photos, at least 3 (seconds)
+    TIMELAPSE = float(conf.get('main', 'TIMELAPSE'))
     SIGN_ME_IN = conf.get('main', 'SIGN_ME_IN')
     if SIGN_ME_IN == "True":
         SIGN_ME_IN = True
     else:
         SIGN_ME_IN = False
-    ARCHIVE = bool(conf.get('main', 'ARCHIVE')) # True ## archive photos?
-    archive_dir = conf.get('main', 'archive_dir') # './'
-    oauth2_refresh_period = int(conf.get('main', 'oauth2_refresh_period')) # 1800000
+    ARCHIVE = bool(conf.get('main', 'ARCHIVE'))
+    archive_dir = conf.get('main', 'archive_dir')
+    oauth2_refresh_period = int(conf.get('main', 'oauth2_refresh_period'))
 
 restore_conf()
 
@@ -75,7 +75,7 @@ restore_conf()
 BUTTON_FONT = ('Times', 24)
 CANVAS_FONT = ("times", 50)
 
-## usually not need to change these.
+
 EXT = 'jpg'     
 RAW_FILENAME = 'image.' + EXT
 PROC_FILENAME = 'photo.' + EXT
@@ -271,9 +271,9 @@ def customize(master):
             self.albums = listalbums.getAlbums("kevin.osborn@gmail.com")
         listalbums.AlbumSelect(self, self.album_entry, self.albums)
         
-    string_customizer('Email Subject', emailSubject, update_subj)
-    string_customizer('Email Msg', emailMsg, update_msg)
-    string_customizer('Caption', photoCaption, update_caption)
+    string_customizer('Objet de l\'email', emailSubject, update_subj)
+    string_customizer('Message', emailMsg, update_msg)
+    string_customizer('Descriptif', photoCaption, update_caption)
     album_frame, self.album_entry = string_customizer('albumID',
                                                       albumID,
                                                       update_albumID)
@@ -282,36 +282,36 @@ def customize(master):
                    text="Lookup",
                    command=launch_album_select).pack()
     
-    string_customizer('Countdown1', countdown1, update_countdown1)
-    string_customizer('Countdown2', countdown2, update_countdown2)
+    string_customizer('Decompte1', countdown1, update_countdown1)
+    string_customizer('Decompte2', countdown2, update_countdown2)
     string_customizer('Timelapse', TIMELAPSE, update_timelapse)
     bool_customizer('Sign me in', SIGN_ME_IN, update_sign_me_in)
     archive_var = Tkinter.StringVar()
     archive_var.set(archive_dir)
     archive_frame = Tkinter.Frame(self)
-    Tkinter.Label(archive_frame, text='Archive Directory').pack(side=Tkinter.LEFT)
+    Tkinter.Label(archive_frame, text='Dossier d\'archive').pack(side=Tkinter.LEFT)
     archive_entry = Tkinter.Entry(archive_frame, textvariable=archive_var, width=60)
     archive_entry.pack(side=Tkinter.LEFT)
     archive_var.trace('w', curry(update_archive, archive_entry))
-    Tkinter.Button(archive_frame, text='Browse', command=archive_dialog).pack(side=Tkinter.LEFT)
+    Tkinter.Button(archive_frame, text='Chercher', command=archive_dialog).pack(side=Tkinter.LEFT)
     archive_frame.pack(side=Tkinter.TOP)
 
     logo_var = Tkinter.StringVar()
     logo_var.set(logopng)
     logo_frame = Tkinter.Frame(self)
-    Tkinter.Label(logo_frame, text='Logo File').pack(side=Tkinter.LEFT)
+    Tkinter.Label(logo_frame, text='Fichier du logo').pack(side=Tkinter.LEFT)
     logo_entry = Tkinter.Entry(logo_frame, textvariable=logo_var, width=60)
     logo_entry.pack(side=Tkinter.LEFT)
     logo_var.trace('w', curry(update_logo, logo_entry))
-    Tkinter.Button(logo_frame, text='Browse', command=logo_dialog).pack(side=Tkinter.LEFT)
+    Tkinter.Button(logo_frame, text='Chercher', command=logo_dialog).pack(side=Tkinter.LEFT)
     logo_frame.pack(side=Tkinter.TOP)
     buttonbox = Tkinter.Frame(self)
     ##  Tkinter.Button(buttonbox, text='Cancel', command=self.destroy).pack(side=Tkinter.LEFT) changes are stored when they are made. cancel is harder than this
-    Tkinter.Button(buttonbox, text='Save', command=update_and_close).pack(
+    Tkinter.Button(buttonbox, text='Sauvegarder', command=update_and_close).pack(
         side=Tkinter.LEFT)
     Tkinter.Button(buttonbox, text='Cancel', command=close).pack(
         side=Tkinter.LEFT)
-    Tkinter.Button(buttonbox, text='Quit TouchSelfie', command=quit).pack(
+    Tkinter.Button(buttonbox, text='Quitter PhotoBooth', command=quit).pack(
         side=Tkinter.LEFT)
     buttonbox.pack()
     
