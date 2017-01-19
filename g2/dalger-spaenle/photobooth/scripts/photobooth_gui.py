@@ -1,9 +1,3 @@
-'''
-Open source photo booth.
-
-Kevin Osborn and Justin Shaw
-WyoLum.com
-'''
 
 ## imports
 from tkkb import Tkkb
@@ -17,7 +11,7 @@ import Image
 import config
 from constants import *
 
-## This is a simple GUI, so we allow the root singleton to do the legwork
+
 root = Tk()
 root.attributes("-fullscreen",True)
 
@@ -26,37 +20,28 @@ def screenshot(*args):
     screenshot.snap()
 root.bind('<F12>', screenshot)
 
-### booth cam may need to present a file dialog gui.  So import after root is defined.
+
 from boothcam import *
 
-## set display geometry
+
 WIDTH = 800
 HEIGHT = 480
-albumID_informed = False ### only show albumID customize info once
+albumID_informed = False
 
-## set photo size to fit nicely in screen
+
 SCALE = 1.8
 
-## the countdown starting value
-# COUNTDOWN1 = custom.countdown1 ### use custom.countdown1 reference directly
+STATUS_H_OFFSET = 150
 
-## put the status widget below the displayed image
-STATUS_H_OFFSET = 150 ## was 210
-
-## only accept button inputs from the AlaMode when ready
 Button_enabled = False
 
 import signal
-TIMEOUT = .3 # number of seconds your want for timeout
+TIMEOUT = .3 
 
 last_snap = time.time()
 
 tkkb = None
-def launch_tkkb(*args):
-    '''
-    Launch on screen keyboard program called tkkb-keyboard.
-    install with '$ sudo apt-get install tkkb-keyboard'
-    '''
+def launch_tkkb(*args): #Envoie le keyboard
     global tkkb
     if tkkb is None:
         tkkb = Toplevel(root)
@@ -70,10 +55,7 @@ def launch_tkkb(*args):
         tkkb_button.config(command=kill_tkkb, text="Close KB")
         tkkb.protocol("WM_DELETE_WINDOW", kill_tkkb)
         
-def kill_tkkb():
-    '''
-    Delete on screen keyboard program called tkkb-keyboard.
-    '''
+def kill_tkkb():#Desaffiche le keyboard
     global tkkb
     if tkkb is not None:
         tkkb.destroy()
@@ -85,7 +67,6 @@ def kill_tkkb():
 
 
 def interrupted(signum, frame):
-    "called when serial read times out"
     print 'interrupted!'
     signal.signal(signal.SIGALRM, interrupted)
 
@@ -162,11 +143,14 @@ def check_and_snap(force=False, countdown1=None):
         Button_enabled = False
         can.delete("text")
         can.update()
-        
+        ##On va mettre en route la led externe
+        led = 7
+        pinMode(led,"OUTPUT")
+        time.sleep(1)
+        digitalWrite(led,1)
         if timelapse_due():
             countdown1 = 0
         im = snap(can, countdown1=countdown1, effect='None')
-#        setLights(r_var.get(), g_var.get(), b_var.get())
         if im is not None:
             if custom.TIMELAPSE > 0:
                 togo = custom.TIMELAPSE - (time.time() - last_snap)
@@ -174,6 +158,7 @@ def check_and_snap(force=False, countdown1=None):
                 togo = 1e8
             last_snap = time.time()
             display_image(im)
+            digitalWrite(led,0)
             can.delete("text")
             can.create_text(WIDTH/2, HEIGHT - STATUS_H_OFFSET, text="Uploading Image", font=custom.CANVAS_FONT, tags="text")
             can.update()
@@ -196,14 +181,11 @@ def check_and_snap(force=False, countdown1=None):
                     
                     # signed_in = False
             can.delete("text")
-            # can.create_text(WIDTH/2, HEIGHT - STATUS_H_OFFSET, text="Press button when ready", font=custom.CANVAS_FONT, tags="text")
             can.update()
     else:
-        ### what command did we get?
         if command.strip():
             print command
     if not force:
-        ## call this function again in 100 ms
         root.after_id = root.after(100, check_and_snap)
 
 ## for clean shutdowns
@@ -232,7 +214,7 @@ def force_snap(countdown1=None):
 #if they enter an email address send photo. add error checking
 def sendPic(*args):
     if signed_in:
-        print 'sending photo by email to %s' % email_addr.get()
+        print 'envoi du message à %s' % email_addr.get()
         try:
             sendMail(email_addr.get().strip(),
                      custom.emailSubject,
@@ -242,15 +224,15 @@ def sendPic(*args):
             etext.focus_set()
             kill_tkkb()
         except Exception, e:
-            print 'Send Failed::', e
+            print 'Envoi non reussi::', e
             can.delete("all")
-            can.create_text(WIDTH/2, HEIGHT - STATUS_H_OFFSET, text="Send Failed", font=custom.CANVAS_FONT, tags="text")
+            can.create_text(WIDTH/2, HEIGHT - STATUS_H_OFFSET, text="Envoi raté", font=custom.CANVAS_FONT, tags="text")
             can.update()
             time.sleep(1)
             can.delete("all")
             im = Image.open(custom.PROC_FILENAME)
             display_image(im)
-            can.create_text(WIDTH/2, HEIGHT - STATUS_H_OFFSET, text="Press button when ready", font=custom.CANVAS_FONT, tags="text")
+            can.create_text(WIDTH/2, HEIGHT - STATUS_H_OFFSET, text="Cliquez quand vous êtes prêt", font=custom.CANVAS_FONT, tags="text")
             can.update()
     else:
         print 'Not signed in'
