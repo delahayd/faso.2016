@@ -20,7 +20,6 @@ camera.preview_window = (0, 0, SCREEN_W, SCREEN_H - BOTTOM_RESERVE)
 camera.preview_fullscreen = False
 
 pygame.display.init()
-# size = (pygame.display.Info().current_w, pygame.display.Info().current_h)
 screen = pygame.display.set_mode((SCREEN_W, SCREEN_H), pygame.FULLSCREEN)
 screen.fill((0, 0, 0))        
 pygame.display.update()
