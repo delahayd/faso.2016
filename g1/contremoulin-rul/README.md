@@ -4,7 +4,7 @@ Projet Miroir magique
 
 Le projet consiste à créer un miroir connecté qui affiche la météo, les actualités, l'emploi du temps du jour et le nombre de personnes présentes dans la maison.
 Pour cela, deux capteurs seront présents et détecteront si une personne rentre ou sort, ce qui modifiera le nombre de personnes présentes et donc l'affichage. Nous disposerons d'un écran sur lequel nous collerons un film miroir sans tain, ce qui permettra de voir l'affichage sur l'écran et de se voir en même temps.
-Le miroir sera relié au Raspberry Pi par un adaptateur et un câble hdmi.
+Le miroir sera relié au Raspberry Pi par un adaptateur et un câble HDMI.
 
 Concernant la hiérarchie des fichiers présents dans le répertoire RENDU nous avons :
 
