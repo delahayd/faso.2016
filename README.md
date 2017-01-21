@@ -6,9 +6,7 @@
 - Groupe Mégane Wintz Loïc Combis => Projet Thalès Espace
 - Groupe Ophelie PIEKAREK Enzo FABRE => Projet d'aide aux aveugles
 - Groupe Joris GRANEL Justin ESCALIER => A determiner
-- Groupe Ophelie PIEKAREK Enzo FABRE => Projet d'aide aux aveugles / robot souris pour chat
 - Groupe Hamelina Julia EHAMELO Jade HENNEBERT => déchet basket (campagne propreté)
-- Groupe Ophelie PIEKAREK Enzo FABRE => Projet d'aide aux aveugles / robot souris pour chat
 - Groupe Amin BAZAZ Thomas NEPLAZ => Projet contrôle de température et humidité dans une salle serveur
 - Groupe Hamelina Julia EHAMELO Jade HENNEBERT => déchet basket (campagne propreté)
 - Groupe Xeryus MAUGUY Fabien TURGUT => Organisation Nutritionelle Améliorée
