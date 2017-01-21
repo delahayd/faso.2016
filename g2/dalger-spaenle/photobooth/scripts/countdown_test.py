@@ -9,14 +9,13 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 COUNTDOWN_LOCATION = (500, 635)
 N_COUNTDOWN = 5
-BOTTOM_RESERVE = 50 ## reserved room at bottom for countdown
-FONTSIZE = 100 ## countdown fontsize
+FONTSIZE = 100 
 
 camera = picamera.PiCamera()
 camera.led = False
 
 camera.preview_alpha = 255
-camera.preview_window = (0, 0, SCREEN_W, SCREEN_H - BOTTOM_RESERVE)
+camera.preview_window = (0, 0, SCREEN_W, SCREEN_H - 50)
 camera.preview_fullscreen = False
 
 pygame.display.init()

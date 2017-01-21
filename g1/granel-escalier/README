@@ -1,2 +1,5 @@
 ESCALIER Justin, GRANEL Joris 
-Sujet inconnu
+Init.py est le fichier qui permet d'initialiser l'id des tweets afin de ne récupérer que les plus recents.
+main.c est le fchier principal qui utilise les programmes python et affiche les tweets dans la console et lit les tweets après
+avoir allumé une led.
+recup.py est le programme python qui permet de récupérer les tweets et les traitent pour les rendre lisibles.

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>GSA - Gestionnaire de stock alimentaire:  Fichier source de src/Sdl_init.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GSA - Gestionnaire de stock alimentaire
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Une camera pour gerer son stock de fruits et legumes</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Sdl_init.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Sdl__init_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL_image.h&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL_ttf.h&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="Sdl__init_8h.html#a2cd109632a6dcccaa80b43561b1ab700">    6</a></span>&#160;<span class="preprocessor">#define SCREEN_WIDTH 800;</span></div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="Sdl__init_8h.html#a6974d08a74da681b3957b2fead2608b8">    7</a></span>&#160;<span class="preprocessor">#define SCREEN_HEIGHT 480;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;SDL_Renderer *<a class="code" href="Sdl__init_8h.html#af99f62e774acad50e71f3cd462e80b60">getrenderer</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;SDL_Window *<a class="code" href="Sdl__init_8h.html#a953810bcb2610a05f16c8006b889765d">getwindow</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;TTF_Font *<a class="code" href="Sdl__init_8h.html#a80bd3e8ca8dddd54e00591e7a341d622">getpolice</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Sdl__init_8h.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Sdl__init_8h.html#a4b66d5e31b5dc18b314c8a68163263bd">cleanup</a>();</div><div class="ttc" id="Sdl__init_8h_html_a953810bcb2610a05f16c8006b889765d"><div class="ttname"><a href="Sdl__init_8h.html#a953810bcb2610a05f16c8006b889765d">getwindow</a></div><div class="ttdeci">SDL_Window * getwindow()</div><div class="ttdoc">Recupère la fenetre actuellement utilisé </div><div class="ttdef"><b>Definition:</b> Sdl_init.c:11</div></div>
+<div class="ttc" id="Sdl__init_8h_html_a4b66d5e31b5dc18b314c8a68163263bd"><div class="ttname"><a href="Sdl__init_8h.html#a4b66d5e31b5dc18b314c8a68163263bd">cleanup</a></div><div class="ttdeci">void cleanup()</div><div class="ttdoc">Detruit la fenetre, le rendu et ferme SDL. </div><div class="ttdef"><b>Definition:</b> Sdl_init.c:46</div></div>
+<div class="ttc" id="Sdl__init_8h_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="Sdl__init_8h.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initilialise une fenetre pour le programme. </div><div class="ttdef"><b>Definition:</b> Sdl_init.c:19</div></div>
+<div class="ttc" id="Sdl__init_8h_html_a80bd3e8ca8dddd54e00591e7a341d622"><div class="ttname"><a href="Sdl__init_8h.html#a80bd3e8ca8dddd54e00591e7a341d622">getpolice</a></div><div class="ttdeci">TTF_Font * getpolice()</div><div class="ttdoc">Recupère la police actuellement utilisé </div><div class="ttdef"><b>Definition:</b> Sdl_init.c:14</div></div>
+<div class="ttc" id="Sdl__init_8h_html_af99f62e774acad50e71f3cd462e80b60"><div class="ttname"><a href="Sdl__init_8h.html#af99f62e774acad50e71f3cd462e80b60">getrenderer</a></div><div class="ttdeci">SDL_Renderer * getrenderer()</div><div class="ttdoc">Recupère le renderer actuellement utilisé </div><div class="ttdef"><b>Definition:</b> Sdl_init.c:8</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi 19 Janvier 2017 11:40:55 pour GSA - Gestionnaire de stock alimentaire par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
