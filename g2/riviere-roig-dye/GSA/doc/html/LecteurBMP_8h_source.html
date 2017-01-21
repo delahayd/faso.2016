@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>COAL - Camera connecte:  Fichier source de src/LecteurBMP.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">COAL - Camera connecte
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Une camera pour gerer son stock de fruits et legumes</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LecteurBMP.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="LecteurBMP_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEF_LecteurBMP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEF_LecteurBMP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// EN-TETE ReconnaissanceV.h</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Couleur_8c.html">Couleur.c</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// ---- CONSTANTES ---- //</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="LecteurBMP_8h.html#a0f98a3cbc9fbc8914ab18b6874af380c">   13</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="LecteurBMP_8h.html#a0f98a3cbc9fbc8914ab18b6874af380c">CHEMIN_IMAGES_ALIMENTS</a> = <span class="stringliteral">&quot;data/images_aliments/&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// ---- STRUCTURE ---- //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structImageBMP.html">   23</a></span>&#160;<span class="comment"></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structImageBMP.html">ImageBMP</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structImageBMP.html#acf40171cf25b03b1f3ba3db036662ca4">   24</a></span>&#160;    <a class="code" href="structCouleur.html">Couleur</a>** <a class="code" href="structImageBMP.html#acf40171cf25b03b1f3ba3db036662ca4">couleurs</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structImageBMP.html#a417271e980823184519d066a695beccb">   25</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structImageBMP.html#a417271e980823184519d066a695beccb">taille_image</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structImageBMP.html#af92031a28d3d2719a4e7301e3df5ac2a">   26</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structImageBMP.html#af92031a28d3d2719a4e7301e3df5ac2a">taille_fichier</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structImageBMP.html#a1527b1e05420f489dd9e784870156bb5">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structImageBMP.html#a1527b1e05420f489dd9e784870156bb5">largeur</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structImageBMP.html#af21e0f06ff94b882a64cb631f4c11ed5">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structImageBMP.html#af21e0f06ff94b882a64cb631f4c11ed5">hauteur</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structImageBMP.html#a0f88c1859cc6f625e1d90f2781b92bf3">   29</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="structImageBMP.html#a0f88c1859cc6f625e1d90f2781b92bf3">entete</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <a class="code" href="LecteurBMP_8h.html#adf95da191510730fe989975a5ebf40ae">ImageBMP</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// ---- FONCTIONS ---- //</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="structImageBMP.html">ImageBMP</a>* <a class="code" href="LecteurBMP_8h.html#ab13e7bade49bec19cbadd7916fbee526">initImageBMP</a>(FILE* fichier);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="LecteurBMP_8h.html#a252d845b99e1e39b914b8bbfd76874d8">destroyImageBMP</a>(<a class="code" href="structImageBMP.html">ImageBMP</a>* image);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// Affichage de l&#39;imageBMP</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span><span class="keywordtype">char</span>* <a class="code" href="LecteurBMP_8h.html#a0942c9ae053d259d998dafd6624d3cd2">toCharImageBMP</a>(<a class="code" href="structImageBMP.html">ImageBMP</a>* image);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// STRUCTURE D&#39;UN FICHIER BITMAP : http://sitelec.org/cours/abati/bmp.htm</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="LecteurBMP_8h.html#a27b159b65a3e3deed0335d7af39fdb5a">getEnTete</a>(FILE* image);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">int</span> <a class="code" href="LecteurBMP_8h.html#ae61caaebc055891630ae68c94678e44b">getLargeurBMP</a>(FILE* image);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">long</span> <a class="code" href="LecteurBMP_8h.html#a4ca72c6d6e7224fe282923f412cc5a44">getTailleImage</a>(FILE* image);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">long</span> <a class="code" href="LecteurBMP_8h.html#a985edc3317925685e5fd0604b4153cd0">getTailleFichier</a>(FILE* image);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="structCouleur.html">Couleur</a>** <a class="code" href="LecteurBMP_8h.html#a4ba6da60296589bfd3ed445b391a312d">getDonnees</a>(FILE* image);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="LecteurBMP_8h_html_a4ca72c6d6e7224fe282923f412cc5a44"><div class="ttname"><a href="LecteurBMP_8h.html#a4ca72c6d6e7224fe282923f412cc5a44">getTailleImage</a></div><div class="ttdeci">long getTailleImage(FILE *image)</div><div class="ttdoc">Retourne la taille de l&#39;image. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:59</div></div>
+<div class="ttc" id="structImageBMP_html_a1527b1e05420f489dd9e784870156bb5"><div class="ttname"><a href="structImageBMP.html#a1527b1e05420f489dd9e784870156bb5">ImageBMP::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:27</div></div>
+<div class="ttc" id="structImageBMP_html_af21e0f06ff94b882a64cb631f4c11ed5"><div class="ttname"><a href="structImageBMP.html#af21e0f06ff94b882a64cb631f4c11ed5">ImageBMP::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:28</div></div>
+<div class="ttc" id="structImageBMP_html"><div class="ttname"><a href="structImageBMP.html">ImageBMP</a></div><div class="ttdoc">Structure définissant une image au format Bitmap. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:23</div></div>
+<div class="ttc" id="structCouleur_html"><div class="ttname"><a href="structCouleur.html">Couleur</a></div><div class="ttdoc">Structure definissant une couleur au format R-G-B. </div><div class="ttdef"><b>Definition:</b> Couleur.h:23</div></div>
+<div class="ttc" id="structImageBMP_html_a0f88c1859cc6f625e1d90f2781b92bf3"><div class="ttname"><a href="structImageBMP.html#a0f88c1859cc6f625e1d90f2781b92bf3">ImageBMP::entete</a></div><div class="ttdeci">unsigned char * entete</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:29</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_a27b159b65a3e3deed0335d7af39fdb5a"><div class="ttname"><a href="LecteurBMP_8h.html#a27b159b65a3e3deed0335d7af39fdb5a">getEnTete</a></div><div class="ttdeci">unsigned char * getEnTete(FILE *image)</div><div class="ttdoc">Récupère l&#39;en-tête d&#39;un fichier .bmp. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:31</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_ab13e7bade49bec19cbadd7916fbee526"><div class="ttname"><a href="LecteurBMP_8h.html#ab13e7bade49bec19cbadd7916fbee526">initImageBMP</a></div><div class="ttdeci">ImageBMP * initImageBMP(FILE *fichier)</div><div class="ttdoc">Constructeur de ImageBMP. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:4</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_adf95da191510730fe989975a5ebf40ae"><div class="ttname"><a href="LecteurBMP_8h.html#adf95da191510730fe989975a5ebf40ae">ImageBMP</a></div><div class="ttdeci">struct ImageBMP ImageBMP</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_a985edc3317925685e5fd0604b4153cd0"><div class="ttname"><a href="LecteurBMP_8h.html#a985edc3317925685e5fd0604b4153cd0">getTailleFichier</a></div><div class="ttdeci">long getTailleFichier(FILE *image)</div><div class="ttdoc">Retourne la taille du fichier BMP. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:65</div></div>
+<div class="ttc" id="Couleur_8c_html"><div class="ttname"><a href="Couleur_8c.html">Couleur.c</a></div></div>
+<div class="ttc" id="structImageBMP_html_acf40171cf25b03b1f3ba3db036662ca4"><div class="ttname"><a href="structImageBMP.html#acf40171cf25b03b1f3ba3db036662ca4">ImageBMP::couleurs</a></div><div class="ttdeci">Couleur ** couleurs</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:24</div></div>
+<div class="ttc" id="structImageBMP_html_af92031a28d3d2719a4e7301e3df5ac2a"><div class="ttname"><a href="structImageBMP.html#af92031a28d3d2719a4e7301e3df5ac2a">ImageBMP::taille_fichier</a></div><div class="ttdeci">int taille_fichier</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:26</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_a0f98a3cbc9fbc8914ab18b6874af380c"><div class="ttname"><a href="LecteurBMP_8h.html#a0f98a3cbc9fbc8914ab18b6874af380c">CHEMIN_IMAGES_ALIMENTS</a></div><div class="ttdeci">const char * CHEMIN_IMAGES_ALIMENTS</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:13</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_a0942c9ae053d259d998dafd6624d3cd2"><div class="ttname"><a href="LecteurBMP_8h.html#a0942c9ae053d259d998dafd6624d3cd2">toCharImageBMP</a></div><div class="ttdeci">char * toCharImageBMP(ImageBMP *image)</div><div class="ttdoc">Transforme la structure imageBMP en une chaine de caractères. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:21</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_a4ba6da60296589bfd3ed445b391a312d"><div class="ttname"><a href="LecteurBMP_8h.html#a4ba6da60296589bfd3ed445b391a312d">getDonnees</a></div><div class="ttdeci">Couleur ** getDonnees(FILE *image)</div><div class="ttdoc">Charge les données d&#39;une image BITMAP (.bmp) dans un tableau de Couleurs. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:75</div></div>
+<div class="ttc" id="structImageBMP_html_a417271e980823184519d066a695beccb"><div class="ttname"><a href="structImageBMP.html#a417271e980823184519d066a695beccb">ImageBMP::taille_image</a></div><div class="ttdeci">int taille_image</div><div class="ttdef"><b>Definition:</b> LecteurBMP.h:25</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_a252d845b99e1e39b914b8bbfd76874d8"><div class="ttname"><a href="LecteurBMP_8h.html#a252d845b99e1e39b914b8bbfd76874d8">destroyImageBMP</a></div><div class="ttdeci">void destroyImageBMP(ImageBMP *image)</div><div class="ttdoc">Destructeur de ImageBMP (libère mémoire) </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:15</div></div>
+<div class="ttc" id="LecteurBMP_8h_html_ae61caaebc055891630ae68c94678e44b"><div class="ttname"><a href="LecteurBMP_8h.html#ae61caaebc055891630ae68c94678e44b">getLargeurBMP</a></div><div class="ttdeci">int getLargeurBMP(FILE *image)</div><div class="ttdoc">Renseigne sur la largeur de l&#39;image. </div><div class="ttdef"><b>Definition:</b> LecteurBMP.c:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi 31 Décembre 2016 15:51:27 pour COAL - Camera connecte par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>
