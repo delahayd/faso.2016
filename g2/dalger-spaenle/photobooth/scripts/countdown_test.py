@@ -9,8 +9,8 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 COUNTDOWN_LOCATION = (500, 635)
 N_COUNTDOWN = 5
-BOTTOM_RESERVE = 50 ## reserved room at bottom for countdown
-FONTSIZE = 100 ## countdown fontsize
+BOTTOM_RESERVE = 50 
+FONTSIZE = 100 
 
 camera = picamera.PiCamera()
 camera.led = False
