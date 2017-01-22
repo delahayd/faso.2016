@@ -2,7 +2,7 @@ DALGER Chloe SPAENLE Mahe
 Photo Booth (Photomaton)
 
 Fichiers :
-  Synthèse-Dalger-Spaenle.pdf
+  Synthese-Dalger-Spaenle.pdf
   Photobooth -
     .gitignore
      EMAIL.LOG
