@@ -99,7 +99,7 @@ int main(void)
     	// Le choix 2 permets l'utilisation des capteurs pour le comptage dans la pièce
     	case 2:
     		{
- 				nbpersonne =0;
+ 			nbpersonne =0;
 			while(nbpersonne<21) 
 			{
 			 	pi_sleep(100);
@@ -131,7 +131,7 @@ int main(void)
 					// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
 			    	//>>>> detection d'un individu entre le capteur et le mur d'en face   
 			  		if(data2 < distance)
-			  		{	
+			  			{	
 			  			// Une personne vient de rentrer donc on incrémente
 			  			nbpersonne=nbpersonne+1;
 			  			// On décremente la couleur petit à petit c'est à dire on va du vert 60  >> vers le rouge 0 
@@ -144,7 +144,7 @@ int main(void)
 			  			data2=distance;
 						pi_sleep(100);
 
-			  		}
+			  			}
 			  	
 			  	}
 				
@@ -164,31 +164,31 @@ int main(void)
 					// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
 			    	//>>>> detection d'un individu entre le capteur et le mur d'en face   
 					if (data2 < distance)
-		         	{
-		               	pi_sleep(100);
+		         		{
+		               			pi_sleep(100);
 						data2=distance;
 						// Lecture de la distance sur le premier capteur
-		                write_block(us_cmd,PIN1,0,0);
+		                		write_block(us_cmd,PIN1,0,0);
 						pi_sleep(200);
-		                read_byte();
-		                read_block();
-		                data1=r_buf[1]*256 + r_buf[2];
+		                		read_byte();
+		                		read_block();
+		               			data1=r_buf[1]*256 + r_buf[2];
 				
-		                // Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
-			    		//>>>> detection d'un individu entre le capteur et le mur d'en face   
-		                if(data1 < distance)
-		                {   
-		                	// Une personne vient de sortir
-		                	nbpersonne=nbpersonne-1;
-		                	// On incrémente la couleur petit à petit c'est à dire on va du rouge 0  >> vers le vert 60
-		                	increment +=3;
+		                			// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
+			    				//>>>> detection d'un individu entre le capteur et le mur d'en face   
+		                		if(data1 < distance)
+		                		{   
+		                			// Une personne vient de sortir
+		                			nbpersonne=nbpersonne-1;
+		                			// On incrémente la couleur petit à petit c'est à dire on va du rouge 0  >> vers le vert 60
+		                			increment +=3;
 							change_color(increment,1,ip);        
-		               	    printf("Une personne vient de sortir\n");
-		                    printf("Nombre de personne : %d\n",nbpersonne);
-		                   	data1=distance;
+		               	    			printf("Une personne vient de sortir\n");
+		                    			printf("Nombre de personne : %d\n",nbpersonne);
+		                   			data1=distance;
 							pi_sleep(100);	 
+		         			}
 		         		}
-		         	}
 				}	
 		 	}
 		        	
