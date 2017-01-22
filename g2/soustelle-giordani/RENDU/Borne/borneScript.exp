@@ -1,0 +1,6 @@
+#!/usr/bin/expect
+        spawn scp -o StrictHostKeyChecking=no communication.txt maximekevin@162.38.111.103:Projet/Commande
+        set pass "password"
+        expect {
+        password: {send "$pass\r"; exp_continue}
+                  }
