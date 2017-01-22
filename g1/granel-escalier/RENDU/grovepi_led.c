@@ -14,12 +14,13 @@ int main(void)
 	int LED = 2; // LED branchée sur le port D2 (digital 2)
 	//Set pin mode to output
 	pinMode(LED,1);  // indique que ce port est utilisé en SORTIE
-	while(1) // boucle infinie
+	while(k<3) // boucle infinie
 	{
 	  digitalWrite(LED,1); // envoie "HIGH" sur le port LED (allume la LED)
 	  pi_sleep(500); // attend 500ms
 	  digitalWrite(LED,0); // envoie "LOW" : éteind la LED
 	  pi_sleep(500); // attend 500ms
+	  k = k+1
 	}
    	return 1;
 }
