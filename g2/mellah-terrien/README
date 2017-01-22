@@ -10,8 +10,8 @@ L'objectif serait d'utiliser un capteur de mouvement à ultrasons, un autre capt
 Afin de ne pas avoir trop de difficulté avec la reconnaissance vocal, nous imposerions l'utilisation de chiffre dans le code de déverouillage. 
 
 
-MAJ : Afin de pouvoir avancer librement dans ce projet, nous avons investi dans du matériel (raspberry, grovePi et capteurs). Voici notre objectif final: 
+MAJ : Afin de pouvoir avancer librement dans ce projet, nous avons investi dans du matériel (Raspberry, GrovePi et capteurs). Voici notre objectif final: 
 
-Concevoir une centrale de surveillance domotique. Lorsque l'utilisateur rentre dans le domicile, les capteurs detectent un mouvement enclenchent le système. Le propriétaire a la possibilité de dévérouiller l'alarme par commande vocale avec un code numérique, il disposera de 3 essais. Si il n'est pas reconnu il a accés à un pavé numérique, avec deux dernières chances de déverouiller l'alarme. En cas d'echec de tous ces essais, le propriétaire sera averti via sms ou email, un buzzer se déclanchera afin de dissuader l'inconnu.  
+Concevoir une centrale de surveillance domotique. Lorsque l'utilisateur rentre dans le domicile, les capteurs détectent un mouvement et enclenchent le système. Le propriétaire a la possibilité de déverouiller l'alarme par commande vocale avec un code numérique, il disposera de 3 essais. Si il n'est pas reconnu, il a accès à un pavé numérique, avec deux dernières chances de déverouiller l'alarme. En cas d'échec de tous ces essais, le propriétaire sera averti via sms ou email, un buzzer se déclenchera afin de dissuader l'inconnu.  
 
- 
+Voici une vidéo qui présente rapidement le fonctionnement du dispositif : https://www.youtube.com/watch?v=ThOLnGxCZY0&feature=youtu.be
