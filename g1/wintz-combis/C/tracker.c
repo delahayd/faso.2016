@@ -2,65 +2,182 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <math.h>
+#define pi 3.14159265358979323846
 
-
-// http://paristech.institutoptique.fr/site.php?id=469&fileid=2739
-
-// Permet de récupèrer les données d'un fichier texte où sont stocker les coords GPS
-// Une fois le texte récupérer, on la supprime du fichier.
-void main() {
-  // //Lance le programme pyhton qui recupère les données GPS et les ecrits dans le fichier texte
-  // system("python ../Python/GPS.py");
-  // //On Récupère en C les données inscrites dans le fichier
-  // int i;
-  // double tab[2];
-  // FILE *fichier;
-  //
-  // fichier = fopen("coordGPS.txt", "r");
-  // if (fichier != NULL) {
-  //   for (i=0; i<2; i++) {
-  //     fscanf(fichier, "%lf\n", tab+i);
-  //   }
-  //   fclose(fichier);
-  // }
-  // Cood GPS que l'on va spliter
-  char *coord = "$GPRMC,124306.000,A,4337.9823,N,00351.7667,E,0.00,344.00,190117,,,A*67";
-  char result[6][30];
-
-  int i=6; // prend succes les valeurs de coord
-  int j =0; //parcourt les cara de chaque fois de result
-  int compteVirgule = 0;
-
-   while (compteVirgule<6){
-     i++;
-     int j = 0; //parcourt les cara de chaque mot de result
-      while (coord[i] != ',') {
-          result[compteVirgule][j] = coord[i];
-          i++;
-          j++;
-      }
-      compteVirgule++;
-  }
-  result[0][6] = '\0';
+int envoyer_donnee(const char* result[]){
   /*On construit la chaine de caractère pour l'utiliser en ligne de commande */
-  char commandLine[43] = "curl --data \"action=SEND_POS&user=Lolo&lat=";
+  const char* commandLine[50] = {"curl --data \"action=SEND_POS&user=Lolo&lat="};
   char lat[30];
   char lng[30];
-  // sprintf(lat,"%lf",tab[0]);
-  // sprintf(lng,"%lf",tab[1]);
-  // sprintf(lat,"%lf",result[2]);
-  // sprintf(lng,"%lf",result[4]);
   strcat(commandLine,result[2]);
   strcat(commandLine,"&lng=");
   strcat(commandLine,result[4]);
-  char date[5] = "today";
+  const char date[10] = "today";
   strcat(commandLine,"&date=");
-  strcat(commandLine,result[0]);
+  strcat(commandLine,date);
   strcat(commandLine,"\" http://www.wintz-combis.16mb.com/Application_Web/controleur/controleur-carte.php");
 
   //on envoi la requete POST sur le serveur.
   system(commandLine);
-  // On supprime la ligne dans le fichier
-    // fichier = fopen("coordGPS.txt", "w");
-    // fclose(fichier);
+  return 0;
+}
+
+int parserLigne(char ligne, char result[]){
+  /**
+  * Sépare la chaine lu dans le fichier /dev/ttyAMA0
+  **/
+  int i=6;
+  int j =0;
+  int compteVirgule = 0;
+
+   while (compteVirgule<6){
+     i++;
+     int j = 0;
+      while (ligne[i] != ',') {
+          result[compteVirgule][j] = ligne[i];
+          i++;
+          j++;
+      }
+      result[compteVirgule][j] ='\0';
+      compteVirgule++;
+  }
+  int longueur = 0;
+  longueur = strlen(result[0]);
+  result[0][6] = '\0';
+  /**
+  * Conversion de la lat On sépare le string en 2
+  **/
+  char lat1[3];
+  int longLat = 0;
+  longLat = strlen(result[2]);
+  int l = 0;
+  while (l<2) {
+    lat1[l] = result[2][l];
+    l++;
+  }
+  char lat2[10];
+  while (l<longLat) {
+    lat2[l] = result[2][l];
+    l++;
+  }
+  float lat;
+  lat = (float)*lat1+*lat2/60;
+  return 0;
+}
+
+/**
+* Fonctions de conversion de coordonnées et de calcul de distance
+**/
+double deg2rad(double deg) {
+  return (deg * pi / 180);
+}
+
+double rad2deg(double rad) {
+  return (rad * 180 / pi);
+}
+
+bool distance(const char* latitude,const char* longitude,double prec){
+  /**
+  * Fonction qui converti lat et lng en coordonnées degrés décimaux, calcule la distance au point d'arrivée.
+  * et la compare à prec
+  **/
+
+  /**
+  * Conversion en degrés décimaux
+  **/
+  double lat = atof(latitude);
+  lat = (lat/100) + (lat - lat/100)/60;
+  double lng = atof(longitude);
+  lng = (lng/100) + (lng - lng/100)/60;
+
+  double theta, dist;
+  theta = lng - 4.35;
+  /**
+  * Formule de calcul de la distance avec les coordonnées GPS de 2 points
+  **/
+  dist = sin(deg2rad(lat)) * sin(deg2rad( 43.833328)) + cos(deg2rad(lat)) * cos(deg2rad(43.833328)) * cos(deg2rad(theta));
+  dist = acos(dist);
+  dist = rad2deg(dist);
+  dist = dist * 60 * 1.1515;
+  dist = dist * 1.609344;
+
+  /**
+  * Comparaison et renvoie du réslultat
+  **/
+  bool res = dist > prec;
+  prec = dist;
+  return res;
+}
+/**
+* sonnerBuzzer demande au capteur Grove Buzzer de sonner pui l'éteint
+**/
+int sonnerBuzzer(){
+  return 0;
+}
+
+
+
+int main() {
+  /**
+  * Boucle principale. Le processus recommence tant que le Raspberry
+  *  est allumé ou que le programme n'est pas arrêté
+  **/
+
+  /**
+  * n est un incrément pour trouver la bonne ligne dans le fichier /dev/ttyAMA0
+  **/
+  int n = 0;
+  /**
+  * point est un double contenant la distance du point précédent envoyé sur le serveur par rapport au point d'arrivée.
+  **/
+  double prec = -1.0;
+
+  while (true){
+    /**
+    * D'abord on lit les données envoyées par le GPS dans le fichier /dev/ttyAMA0
+    **/
+    FILE* fichier;
+    int i;
+    const char* chaine[100] = "";
+    fichier  = fopen("/dev/ttyAMA0","r");
+    /**
+    * On teste le résultat de l'ouverture du fichier
+    **/
+    if(fichier != NULL){
+
+        while (i<=n){
+          /**
+          * On cherche la n-ième ligne qui commence par $GPRMC
+          **/
+          fgets(chaine,100,fichier);
+          if (chaine[0] == '$' && chaine[1] == 'G' && chaine[2] == 'P' && chaine[3] == 'R' && chaine[4] == 'M' && chaine [5] == 'C'){
+            if(i == n){
+              n = n+1;
+              /**
+              * On a récupéré la bonne ligne on va donc la parser
+              **/
+              const char* result[6];
+              parserLigne(chaine,result);
+              /**
+              * On a parsé la chaine et mis le résultat dans dans res, il nous reste plus qu'a envoyer les données sur le serveur.
+              **/
+              envoyer_donnee(result);
+              /**
+              * Il ne nous reste qu'à calculer la distance par rapport au point d'arrivée.
+              **/
+              bool dist = distance(result[2],result[4],prec);
+              if(dist){
+                sonnerBuzzer();
+              }
+            }
+            else{
+              i = i+1;
+            }
+          }
+        }
+      fclose(fichier);
+    }
+  }
+  return 0;
 }
