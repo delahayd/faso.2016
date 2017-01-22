@@ -8,11 +8,11 @@
 int main(){
 	FILE* fichier=NULL;
 	FILE* fichierHashtag=NULL;
-	system("python init.py"); // execution prog python pour initialiser au dernier tweet
-	fichierHashtag=fopen("Hashtag.txt","w+");
 	char hash[30]=""; // creation chaine de caractere pour le #
 	printf("Entrez le hashtag :");
 	scanf("%s",hash); // demande de rentrer le #
+	system("python init.py"); // execution prog python pour initialiser au dernier tweet
+	fichierHashtag=fopen("Hashtag.txt","w+");
 	fputs(hash,fichierHashtag); // ecrit le # dans le fichier
 	fclose(fichierHashtag);
 	while(1){
