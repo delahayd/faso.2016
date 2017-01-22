@@ -19,6 +19,19 @@ on y trouve des fichiers pour l'affichage du site web (html) et récupération d
                     
 
 -YURI SPEECH : 
-         WSMR.cmd : fait appel au logiciel SPEECH TO TEXT de windows pour pouvoir convertir la voix en text et ainsi appeller les fonctions codés auparavant 
+         WSMR.cmd : fait appel au logiciel SPEECH TO TEXT de windows pour pouvoir convertir la voix en text .
+         
+         macros : receuil des éléments grâce à WSMR.cmd et selon ce qui est dit fait utilise un des fichier suivant 
+                  date.xml : fait appel à la fonction de yuri.php pour récupérer la date 
+                  time.xml : fait appel à la fonction de yuri.php pour récupérer l'heure 
+                  insulte.xml: fait appel a la fonction de yuri.php pour dire une insulte 
+                  presentation : fait appel à une fonction de yuri.php pour se présenter 
+                  hcc_yuri.xml.xml : fait appel à une fonction de yuri.php pour allumer/éteindre les appareils 
+                  fr-FR.grxml: vérification et adaptation de l'heure et de la date au format souhaité
+                  
+                  
+                  
+                  
+         
          
           
