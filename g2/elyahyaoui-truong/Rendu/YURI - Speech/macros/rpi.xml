@@ -1,0 +1,25 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleEedomus" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleEedomus" scope="public">
+    <example>Yuri allume le salon</example>
+    <tag>out.action=new Object(); </tag>
+    <item>Yuri</item>
+    <one-of>
+      <item>allume<tag>out.action.state=1</tag></item>
+      <item>eteint<tag>out.action.state=0</tag></item>
+    </one-of>
+    <one-of>
+      <item>la lampe
+        <tag>out.action.engine='LAMPE'</tag>
+      </item>
+      <item>le bureau
+        <tag>out.action.engine='LAMPE_BUREAU'</tag>
+      </item>
+      <item>le salon
+        <tag>out.action.engine='LAMPE_SALON'</tag>
+		</item>
+    </one-of>
+    <tag>out.action.action='CHANGE_ENGINE_STATE'</tag>
+	  <tag>out.action._attributes.threashold="0.80";</tag>
+    <tag>out.action._attributes.uri="http://162.38.111.79/yuri.php";</tag>
+  </rule>
+</grammar>

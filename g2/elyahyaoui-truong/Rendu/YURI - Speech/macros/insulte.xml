@@ -1,0 +1,15 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleEedomus" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleEedomus" scope="public">
+    <example>Yuri insulte le</example>
+    <tag>out.action=new Object(); </tag>
+    <item>Yuri insulte</item>
+    <one-of>
+      <item>la<tag>out.action.sex=0</tag></item>
+      <item>le<tag>out.action.sex=1</tag></item>
+	  <item>moi<tag>out.action.sex=-1</tag></item>
+    </one-of>
+
+    <tag>out.action.action='GET_AFFRONT'</tag>
+    <tag>out.action._attributes.uri="http://192.168.1.75/yuri.php";</tag>
+  </rule>
+</grammar>

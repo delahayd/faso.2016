@@ -1,0 +1,30 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleEedomus" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+						  <rule id="ruleEedomus" scope="public">
+						    <example>Yuri allume le salon</example>
+						    <tag>out.action=new Object(); </tag>
+						    <item>Yuri</item>
+						    <one-of>
+						      <item>allume<tag>out.action.state="on"</tag></item>
+						      <item>eteint<tag>out.action.state="off"</tag></item>
+						    </one-of>
+
+						    <one-of><item>Lapin
+						        <tag>out.action.engine='id-10'</tag>
+								<tag>out.action.code='2'</tag>
+						      </item><item>Ventilateur
+						        <tag>out.action.engine='id-11'</tag>
+								<tag>out.action.code='1'</tag>
+						      </item>
+
+						  	<item>tout
+						        <tag>out.action.engine='id-all'</tag>
+								<tag>out.action.code='-1'</tag>
+						      </item>
+
+						   </one-of>
+						    <tag>out.action.action='CHANGE_STATE'</tag>
+							 <tag>out.action.provider='yuri'</tag>
+							  <tag>out.action._attributes.threashold="0.80";</tag>
+						    <tag>out.action._attributes.uri="http://162.38.111.79/hcc/action.php";</tag>
+						  </rule>
+						</grammar>

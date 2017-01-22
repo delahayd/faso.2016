@@ -1,0 +1,18 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleTime" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleTime" scope="public">
+    <example>Yuri quel jour sommes nous ?</example>
+    <tag>out.action=new Object(); </tag>
+	<one-of>
+      <item>Yuri quel jour sommes nous</item>
+      <item>Yuri on est le combien</item>
+      <item>Yuri donne moi la date</item>
+      <item>Yuri la date</item>
+	  
+    </one-of>
+	
+	
+    <tag>out.action.action='GET_DATE'</tag>
+    <tag>out.action._attributes.uri="http://192.168.1.75/yuri.php";</tag>
+    <tag>out.action._attributes.threashold="0.80";</tag>
+  </rule>
+</grammar>
