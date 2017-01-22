@@ -1,0 +1,36 @@
+\section{Installation et Fonctionnement}
+
+    \subsection{Mise en place du matériel}
+        Tout d'abord, il faut vérifier le branchement des capteurs au Raspberry : le capteur ultrason doit être branché sur le pin D4 du grove shield, la camera sur le port CSI et les hauts parleurs sur le port jack, puis, brancher le Raspberry au réseau via un câble Ethernet et le brancher à l'électricité avec l'adaptateur. Il est possible aussi de connecter le Raspberry pi au réseau via WiFi au lieu de Ethernet.
+        Ensuite, il faut positionner le dispositif devant l'oeuvre et l'orienter de sorte que le capteur ultrason et la caméra puissent couvrir la zone en face de l'oeuvre.
+    
+    \subsection{Installation du logiciel}
+        Pour l'installation, il faut installer le package i2c-tools sur le système, ensuite télécharger les fichiers du projet sur le Raspberry, la manière la plus rapide de faire ça c'est avec la commande :
+        \begin{verbatim}git clone https://github.com/medihebfaiza/museum_security.git \end{verbatim}
+        En fin, il faut exécuter le programme C qui est déjà compilé.
+        Par ailleurs, ce programme dépend de la bibliothèque grovepi et d'un script python inclus dans le projet donc il ne faut pas les effacer ou même les déplacer.
+    
+    \subsection{Fonctionnement}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=3.5cm]{fonct1.png}
+        \caption{Distance minimale respectée}
+        \label{fig:fonct1}
+    \end{figure}
+            
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=3.5cm]{fonct2.png}
+        \caption{Distance minimale dépassé}
+        \label{fig:fonct2}
+    \end{figure}
+            
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=3.5cm]{fonct3.png}
+        \caption{Notification du gardien}
+        \label{fig:fonct3}
+    \end{figure}
+    
+    Nous avons désigner une distance minimale à respecter par rapport à l'oeuvre, une fois cette distance n'est pas respectée, le matériel lance un avertissement, si l'individu continue à s'approcher de l'oeuvre, une alarme se déclenche, avec une prise de photo de l'individu et une envoie de notification à l'agent de sécurité (ceci se passe en quelques secondes).
