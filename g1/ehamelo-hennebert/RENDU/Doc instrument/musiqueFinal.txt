@@ -1,0 +1,15 @@
+def note_from_text(ligne)
+  return ligne.split('.')[0]
+end
+
+loop do
+  use_synth :tri
+  File.open('/home/hamelinajade/musique_live.txt') do |file|
+    file.each_line{
+      |line|
+      puts("Note=#{line}")
+      play note_from_text(line).to_i
+      sleep 0.15
+    }
+  end
+end
