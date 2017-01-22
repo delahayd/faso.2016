@@ -1,5 +1,6 @@
-Le rendu est composÈ de 3 fichiers:
-Un fichier pdf qui dÈcrit prÈcisemment tout le projet : "synthËse-Bottero-Herreros.pdf".
-Un fichier pdf qui dÈcrit le code de l'application mobile : "CodeApplication.pdf".
-Une fichier ino qui est le code arduino de la machine ‡ cocktails : "MachineCocktails.ino".
+Le rendu est compos√© de 3 fichiers:
+Un fichier pdf qui d√©crit pr√©cisemment tout le projet : "synth√®se-Bottero-Herreros.pdf".
+Un fichier pdf qui d√©crit le code de l'application mobile : "CodeApplication.pdf".
+Une fichier ino qui est le code arduino de la machine √† cocktails : "MachineCocktails.ino".
+Un fichier apk si vous d√©sirez t√©l√©charger l'application.
 Bonne lecture.
