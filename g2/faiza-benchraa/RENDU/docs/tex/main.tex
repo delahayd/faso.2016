@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\graphicspath{ {imgs/} }
+\renewcommand*\contentsname{Sommaire}
+
+\title{Rapport de projet FAS \\ \textbf{Keep away : un système de sécurité\\ pour le musée}}
+\author{FAIZA Mohamed Iheb\\ BENCHRAA Soufiane\\\\ {\small sous la direction de}\\ M. David Delahaye\\ M. Vincent Berry}
+\date{December 2016}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\begin{center}
+\includegraphics[height=4cm]{museum-1.png}\\
+\includegraphics[height=2cm]{logoum2.png}
+\includegraphics[height=2cm]{logopolytech.png}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\textbf{\LARGE Remerciements :}\\
+Nous adressons nos remerciements aux personnes qui nous ont aidé dans la réalisation de ce projet.
+En premier lieu, nous remercions M. David Delahaye et M. Vincent Berry en tant que tuteurs de projet, ils nous ont guidé dans notre travail et nous ont aidé à trouver des solutions pour avancer.
+Nous remercions aussi l'université de Montpellier et Polytech Montpellier pour l'environnement de travail qu'elles proposent et qui nous a permis de mener à bien ce projet.
+
+\clearpage
+
+
+\import{sections/}{Introduction.tex}
+\import{sections/}{Installation.tex}
+\import{sections/}{Conception.tex}
+\import{sections/}{PartieProgrammation.tex}
+\import{sections/}{Organisation.tex}
+\import{sections/}{Perspectives.tex}
+
+
+\end{document}
