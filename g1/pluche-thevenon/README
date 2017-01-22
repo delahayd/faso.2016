@@ -1,6 +1,6 @@
 Groupe : PLUCHE Cyril / THEVENON Romain
 
-Projet Beatbox Music
+Projet Juke-Box Music
 
-Le projet consiste  à créer un objet composé de plusieurs capteurs de mouvement qui vont permettre de lancer différentes musiques selon le capteur détecté. 
+Le projet consiste  à créer un objet composé de plusieurs capteurs de mouvement (changer en boutons car problèmes) qui vont permettre de lancer différentes musiques selon le capteur détecté. 
 De plus, nous allons ajouter un buzzer qui va permettre d'avoir une sortie son et un ecran lcd qui va permettre un interaction avec l'utilisateur.

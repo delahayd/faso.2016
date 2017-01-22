@@ -5,17 +5,16 @@
 #include <math.h>
 #define pi 3.14159265358979323846
 
-int envoyer_donnee(const char* result[]){
+int envoyer_donnee(char result[6][100]){
   /*On construit la chaine de caractère pour l'utiliser en ligne de commande */
-  const char* commandLine[50] = {"curl --data \"action=SEND_POS&user=Lolo&lat="};
+  char *commandLine = "curl --data \"action=SEND_POS&user=Lolo&lat=";
   char lat[30];
   char lng[30];
   strcat(commandLine,result[2]);
   strcat(commandLine,"&lng=");
   strcat(commandLine,result[4]);
-  const char date[10] = "today";
   strcat(commandLine,"&date=");
-  strcat(commandLine,date);
+  strcat(commandLine,result[0]);
   strcat(commandLine,"\" http://www.wintz-combis.16mb.com/Application_Web/controleur/controleur-carte.php");
 
   //on envoi la requete POST sur le serveur.
@@ -23,10 +22,12 @@ int envoyer_donnee(const char* result[]){
   return 0;
 }
 
-int parserLigne(char ligne, char result[]){
+int parserLigne(char *ligne, char result[6][100]){
   /**
   * Sépare la chaine lu dans le fichier /dev/ttyAMA0
+  * et met chaque partie das un tableau de chaine de caractères
   **/
+
   int i=6;
   int j =0;
   int compteVirgule = 0;
@@ -77,12 +78,13 @@ double rad2deg(double rad) {
   return (rad * 180 / pi);
 }
 
-bool distance(const char* latitude,const char* longitude,double prec){
+int distance(char* latitude,char* longitude,double prec){
   /**
   * Fonction qui converti lat et lng en coordonnées degrés décimaux, calcule la distance au point d'arrivée.
   * et la compare à prec
   **/
 
+  int res;
   /**
   * Conversion en degrés décimaux
   **/
@@ -105,17 +107,13 @@ bool distance(const char* latitude,const char* longitude,double prec){
   /**
   * Comparaison et renvoie du réslultat
   **/
-  bool res = dist > prec;
+  if (dist > prec) {
+    res = 1;
+  }
+  else { res = 0;}
   prec = dist;
   return res;
 }
-/**
-* sonnerBuzzer demande au capteur Grove Buzzer de sonner pui l'éteint
-**/
-int sonnerBuzzer(){
-  return 0;
-}
-
 
 
 int main() {
@@ -133,13 +131,13 @@ int main() {
   **/
   double prec = -1.0;
 
-  while (true){
+  while (1){
     /**
     * D'abord on lit les données envoyées par le GPS dans le fichier /dev/ttyAMA0
     **/
     FILE* fichier;
     int i;
-    const char* chaine[100] = "";
+    char chaine[100];
     fichier  = fopen("/dev/ttyAMA0","r");
     /**
     * On teste le résultat de l'ouverture du fichier
@@ -157,18 +155,18 @@ int main() {
               /**
               * On a récupéré la bonne ligne on va donc la parser
               **/
-              const char* result[6];
+              char result[6][100];
               parserLigne(chaine,result);
               /**
-              * On a parsé la chaine et mis le résultat dans dans res, il nous reste plus qu'a envoyer les données sur le serveur.
+              * On a parsé la chaine et mis le résultat dans res, il nous reste plus qu'a envoyer les données sur le serveur.
               **/
               envoyer_donnee(result);
               /**
               * Il ne nous reste qu'à calculer la distance par rapport au point d'arrivée.
               **/
-              bool dist = distance(result[2],result[4],prec);
-              if(dist){
-                sonnerBuzzer();
+              int dist = distance(result[2],result[4],prec);
+              if(dist = 1){
+                system("python grove_buzzer.py");
               }
             }
             else{

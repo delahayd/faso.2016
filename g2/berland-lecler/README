@@ -1,2 +1,16 @@
-LECLER Hugo, BERLAND Florent
-Projet NAO
+Par Florent BERLAND et Hugo LECLER
+
+Hiérarchie des fichiers du projet :
+
+RACINE
+	- synthese-berland-lecler.pdf : Compte rendu synthétique du projet contenant un résuùé du projet, les moyens déployés et un mode d'emploi
+
+	- Emetteur : dossier contenant la partie émetteurs du projet
+		- Emmetteur.ino : fichier contenant le code des émetteurs, téléversable sur les cartes microcontrôlleurs via le logiciel Arduino
+	
+	- Recepteur : dossier contenant le code Raspberry
+		- affichage_lcd.cpp : fichier d'implémentation des fonctions relatives à l'affichage de texte sur l'écran LCD
+		- affichage_lcd.h : fichier d'en-tête des fonctions de l'affichage LCD
+		- codeframboise.cpp : fichier contentant le code principal du programme du boîtier utilisateur, avec entre-autres la fonction main()
+		- grovepi.c : implémentation en C des fonctions d'interface avec le shield
+		- grovepi.h : déclaration des fonctions d'interface avec le shield
