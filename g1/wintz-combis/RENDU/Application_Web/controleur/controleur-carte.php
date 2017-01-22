@@ -25,7 +25,7 @@
 	}
 	else if(isset($_GET["action"]) && $_GET["action"] == "GET"){
 		$bdd = get_bdd();
-		$req = $bdd->query("SELECT * FROM Positions WHERE position_user='".$_GET["select"]."'");
+		$req = $bdd->query("SELECT * FROM Positions WHERE position_user='".$_GET["select"]."' ORDER BY position_id");
 		$res = $req->fetchAll();
 		echo json_encode($res);
 	}
