@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS member (
+  memberId INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  memberName VARCHAR(80) NOT NULL,
+  memberFirstName VARCHAR(80),
+  memberPassword VARCHAR(120) NOT NULL,
+  memberMail VARCHAR(80),
+  memberPhone VARCHAR(20),
+  memberRegistrationDate TIMESTAMP DEFAULT NOW(),
+  memberCookieId VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS temperature (
+  temperatureId INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  temperatureValue FLOAT NOT NULL,
+  temperatureDate TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS activity (
+  activityId INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  activityStatus VARCHAR(80),
+  activityTimeStart TIMESTAMP DEFAULT NOW(),
+  activityTimeEnd TIMESTAMP DEFAULT NOW()
+);

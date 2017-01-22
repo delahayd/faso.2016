@@ -1,0 +1,121 @@
+body
+{
+	background-color:#E6E2AF;
+	text-align: center;
+}
+
+h1
+{
+	font-size: 35px;
+	color: #002F2F;
+	font-family: comic;
+	
+}
+
+h2
+{
+	font-size: 25px;
+	color: #046380;
+}
+p
+{
+	font-size: 14px;
+	color: #046380;
+}
+
+
+.mdl-textfield__label
+{
+	color: #046380;
+}
+
+
+/*------------------Page connexion-------------------*/
+.boite-connexion
+{
+	width: 90%;
+	max-width: 300px;
+	margin: auto;
+
+}
+
+.boite-connexion h2
+{
+	margin-left: 20%;
+}
+
+.form-connexion
+{
+	color:#046380;
+}
+
+.valid-button button
+{
+	border: 1px solid #002F2F;
+}
+
+
+
+
+/*---------------------Dashboard--------------------*/
+
+.dashboard-title h1
+{
+	text-align: center;
+}
+
+.alarm
+{
+	border: 1px solid #002F2F;
+	padding: 2px;
+	background-color: #A7A37E;
+	
+
+}
+
+.alarm h2
+{
+	text-align: center;
+}
+
+.alarm-button
+{
+	
+	padding: 2px;
+	margin: auto;
+	text-align: center;
+	width:200px;
+	height: 40px;
+}
+
+.alarm-button button
+{
+	
+	border: 1px solid #002F2F;
+}
+
+.temperature
+{
+	border: 1px solid #002F2F;
+	padding: 2px;
+	background-color: #A7A37E;
+}
+
+.temperature h2
+{
+	text-align: center;
+	
+}
+
+.sms
+{
+	border: 1px solid #002F2F;
+	padding: 2px;
+	background-color: #A7A37E;
+}
+
+.sms h2
+{
+	text-align: center;
+	
+}
