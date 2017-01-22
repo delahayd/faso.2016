@@ -166,7 +166,7 @@ int main() {
               **/
               int dist = distance(result[2],result[4],prec);
               if(dist = 1){
-                system("python grove_buzzer.py");
+                system("python python/grove_buzzer.py");
               }
             }
             else{
