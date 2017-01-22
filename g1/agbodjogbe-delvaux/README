@@ -8,8 +8,10 @@ Hiérarchie des fichier :
 	- Compilation.c : Les commandes pour la compilation des programmes
 	- grovepi.c : Fonction pour utilisation des capteurs
 	- grovepi.h : Descripteur des fonctions du grovepi.c
-	- grovepi_image.c : Fichier regroupant les fonctions servant à l'adaptation de l'image projetée par 	rapport au son
-	- grovepi_menucpt.c : Fichier regroupant les fonctions servant à adapter la lumière des lampe 	au nombre de personnes
+	- grovepi_image.c : Fichier regroupant les fonctions servant à l'adaptation de l'image projetée par 
+	  rapport au son
+	- grovepi_menucpt.c : Fichier regroupant les fonctions servant à adapter la lumière des lampe 
+	  au nombre de personnes
 
 
 2 - bin
