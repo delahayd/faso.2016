@@ -13,6 +13,8 @@ Le dossier rendu contient deux dossiers, le dossier Application_Web et le dossie
   * views qui contient la vue affichée à l'utilisateur
   * function qui contient un fichier php avec notamment la fonction de connexion à la base de données
   * img contient juste l'icône de Polytech
-  * python qui contient la fonction de déclenchement du Buzzer
 ### Le dossier C
   * Contient le fichier tracker.c (programme principal sur le Raspberry)
+### Le dossier python
+  * Contient le fichier grove_buzzer.py (déclenchement du Buzzer)
+
