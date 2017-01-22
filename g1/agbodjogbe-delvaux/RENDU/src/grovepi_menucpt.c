@@ -57,7 +57,7 @@ int main(void)
 	printf(" \n >>> Bienvenue dans le menu : Faites votre choix ! <<< \n\n ");
 	printf(" 1) Tapez 1 pour gérer les entrées sorties a la main \n ");
 	printf(" 2) Tapez 2 pour gérer les entrées sorties avec les capteurs \n ");
-	printf(" 3) Tapez 3 pour sortir \n ");
+	
 	scanf("%d",&choix);
 
 	// Selon le choix de l'utilisateur
