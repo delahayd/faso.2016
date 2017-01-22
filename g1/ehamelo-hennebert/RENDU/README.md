@@ -21,6 +21,7 @@ Le dossier " Doc instrument" contient :
             
             -musiqueFinal.txt et musiquetest.txt : fichiers texte qui nous ont servi pour tester la lecture ou non d'un fichier texte par sonic pi lors.
             
+            
 
     
             
