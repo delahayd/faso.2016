@@ -67,7 +67,7 @@ int initQuestions()
 int SND = 2;
 int PIN1 = 3;
 int PIN2 = 4;
-int PIN3 = 4;
+int PIN3 = 5;
 
 int lancerSons(FMOD_SOUND *sound)
 {
