@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>GSA - Gestionnaire de stock alimentaire:  Fichier source de src/ReconnaissanceV.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GSA - Gestionnaire de stock alimentaire
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Une camera pour gerer son stock de fruits et legumes</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ReconnaissanceV.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ReconnaissanceV_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DEF_ReconnaissanceV</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DEF_ReconnaissanceV</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// EN-TETE ReconnaissanceV.h</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Couleur_8h.html">Couleur.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BDD_8h.html">BDD.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ImageBMP_8h.html">ImageBMP.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// ---- CONSTANTES ---- //</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Ces constanctes sont utilisées par plusieurs fonctions comme &quot;seuil&quot; de détection des couleurs</span></div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="ReconnaissanceV_8h.html#aad760e6a94f92825b41f8506ab0d56db">   17</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ReconnaissanceV_8h.html#aad760e6a94f92825b41f8506ab0d56db">PRECISION_COULEUR_FOND_UNI</a>;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="ReconnaissanceV_8h.html#a125a6c6385417973aa0ec1232cb22732">   18</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ReconnaissanceV_8h.html#a125a6c6385417973aa0ec1232cb22732">PRECISION_COULEUR_HORS_FOND</a>;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="ReconnaissanceV_8h.html#aa36ce9e8feabb4f7410aeba26309a715">   19</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ReconnaissanceV_8h.html#aa36ce9e8feabb4f7410aeba26309a715">PRECISION_COULEUR_RECHERCHE_ALIMENT</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// ---- FONCTIONS ---- //</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="ReconnaissanceV_8h.html#a429ad1ecb789033262b9b73a84c0c092">estUni</a>(<a class="code" href="structImageBMP.html">ImageBMP</a>* image);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="structCouleur.html">Couleur</a>* <a class="code" href="ReconnaissanceV_8h.html#a5e3118d6b7424cdae587414038e5f708">couleurDominante</a>(<a class="code" href="structImageBMP.html">ImageBMP</a>* image);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="structCouleur.html">Couleur</a>* <a class="code" href="ReconnaissanceV_8h.html#a7e10ee473238fa8e93d85142aded8313">couleurDominanteHorsFond</a>(<a class="code" href="structImageBMP.html">ImageBMP</a>* image, <a class="code" href="structCouleur.html">Couleur</a>* couleurFond);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">int</span> <a class="code" href="ReconnaissanceV_8h.html#ae7a1e847f9fda1db4203bb39412a5cd0">rechercheAliment</a>(<a class="code" href="structCouleur.html">Couleur</a>* coul);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="BDD_8h_html"><div class="ttname"><a href="BDD_8h.html">BDD.h</a></div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_ae7a1e847f9fda1db4203bb39412a5cd0"><div class="ttname"><a href="ReconnaissanceV_8h.html#ae7a1e847f9fda1db4203bb39412a5cd0">rechercheAliment</a></div><div class="ttdeci">int rechercheAliment(Couleur *coul)</div><div class="ttdoc">Renseigne sur la présence (ou non) d&amp;#39;au moins un aliment ayant une couleur proche du paramètre...</div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.c:156</div></div>
+<div class="ttc" id="structImageBMP_html"><div class="ttname"><a href="structImageBMP.html">ImageBMP</a></div><div class="ttdoc">Structure définissant une image au format Bitmap. </div><div class="ttdef"><b>Definition:</b> ImageBMP.h:22</div></div>
+<div class="ttc" id="structCouleur_html"><div class="ttname"><a href="structCouleur.html">Couleur</a></div><div class="ttdoc">Structure definissant une couleur au format R-G-B. </div><div class="ttdef"><b>Definition:</b> Couleur.h:22</div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_a125a6c6385417973aa0ec1232cb22732"><div class="ttname"><a href="ReconnaissanceV_8h.html#a125a6c6385417973aa0ec1232cb22732">PRECISION_COULEUR_HORS_FOND</a></div><div class="ttdeci">const int PRECISION_COULEUR_HORS_FOND</div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.h:18</div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_aad760e6a94f92825b41f8506ab0d56db"><div class="ttname"><a href="ReconnaissanceV_8h.html#aad760e6a94f92825b41f8506ab0d56db">PRECISION_COULEUR_FOND_UNI</a></div><div class="ttdeci">const int PRECISION_COULEUR_FOND_UNI</div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.h:17</div></div>
+<div class="ttc" id="Couleur_8h_html"><div class="ttname"><a href="Couleur_8h.html">Couleur.h</a></div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_a7e10ee473238fa8e93d85142aded8313"><div class="ttname"><a href="ReconnaissanceV_8h.html#a7e10ee473238fa8e93d85142aded8313">couleurDominanteHorsFond</a></div><div class="ttdeci">Couleur * couleurDominanteHorsFond(ImageBMP *image, Couleur *couleurFond)</div><div class="ttdoc">Renvoie la couleur dominante de l&amp;#39;image (moyenne des 3 composantes RGB), sans tenir compte de la coul...</div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.c:90</div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_a5e3118d6b7424cdae587414038e5f708"><div class="ttname"><a href="ReconnaissanceV_8h.html#a5e3118d6b7424cdae587414038e5f708">couleurDominante</a></div><div class="ttdeci">Couleur * couleurDominante(ImageBMP *image)</div><div class="ttdoc">Renvoie la couleur dominante de l&amp;#39;image (moyenne des 3 composantes RGB) </div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.c:65</div></div>
+<div class="ttc" id="ImageBMP_8h_html"><div class="ttname"><a href="ImageBMP_8h.html">ImageBMP.h</a></div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_a429ad1ecb789033262b9b73a84c0c092"><div class="ttname"><a href="ReconnaissanceV_8h.html#a429ad1ecb789033262b9b73a84c0c092">estUni</a></div><div class="ttdeci">int estUni(ImageBMP *image)</div><div class="ttdoc">Teste si la couleur de fond est clairement discernable ou pas. </div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.c:28</div></div>
+<div class="ttc" id="ReconnaissanceV_8h_html_aa36ce9e8feabb4f7410aeba26309a715"><div class="ttname"><a href="ReconnaissanceV_8h.html#aa36ce9e8feabb4f7410aeba26309a715">PRECISION_COULEUR_RECHERCHE_ALIMENT</a></div><div class="ttdeci">const int PRECISION_COULEUR_RECHERCHE_ALIMENT</div><div class="ttdef"><b>Definition:</b> ReconnaissanceV.h:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche 22 Janvier 2017 23:03:38 pour GSA - Gestionnaire de stock alimentaire par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
