@@ -1,0 +1,10 @@
+ID_PESEE;QUANTITE_PESEE;DESCRIPTION_PESEE;DATE_PESEE;ID_ALIMENT_PESEE
+1;200;"une pesee";1484966377;1
+2;150;"ok gros";1484966277;3
+3;300;"la pesee3";1484966177;4
+4;50;"nop";1484965877;2
+5;20;"salut la pesee 5";1484964277;1
+6;20;"sadsfa pesee 5";1484964277;1
+7;20;"sadsfla pqesee 5";1484964277;2
+8;20;"sasdflut laq pesee 5";1484964277;1
+9;20;"salut xdfla pesee 5";1484964277;4
