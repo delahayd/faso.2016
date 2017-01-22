@@ -35,10 +35,10 @@ int main(void)
                 system(liena);// Appelle le lien donné, qui va ajouter une nouvelle activation à la BD 
                 printf(liena);
 
-                digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+                digitalWrite(BUZZER,1); // envoie "HIGH" sur le du Buzzer 
                 pi_sleep(200); // attend 500ms
-                digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
-		// LED et buzzer annoncent à l'utilisateur que la tâche a été éxecutée 
+                digitalWrite(BUZZER,0); // envoie "LOW" : éteind le Buzzer 
+		// buzzer annoncent à l'utilisateur que la tâche a été éxecutée 
                 
 		printf("\n");
 		printf("Alarme en cours d'activation ... \n");
@@ -89,13 +89,13 @@ int main(void)
 	
 		while (tentative<3 && test==0) 
 		{	
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port du Buzzer 
 	                pi_sleep(200); // attend 500ms
-	                digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
+	                digitalWrite(BUZZER,0); // envoie "LOW" : éteind le Buzzer 
 			pi_sleep(200);
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port du Buzzer 
 	                pi_sleep(200); // attend 500ms
-            		digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
+            		digitalWrite(BUZZER,0); // envoie "LOW" : éteind le Buzzer 
 
 			printf("Rentrez le code à 4 chiffres\n"); //On affiche la demande de code
 			scanf("%d",&code); //On enregistre la donnée du visiteur dans la variable code
@@ -132,10 +132,10 @@ int main(void)
 		
 		if (test==1)
 		{
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le Buzzer 
 		        pi_sleep(600); // attend 500ms
-		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
-			//On active la LED et le buzzer pour indiquer au visiteur que le code est juste
+		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind le Buzzer 
+			//On active le buzzer pour indiquer au visiteur que le code est juste
 		
 			printf("Code correct ! \n");
 		
@@ -161,22 +161,22 @@ int main(void)
 		}
 		else
 		{
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port du Buzzer 
 		        pi_sleep(200); // attend 200ms
-		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
+		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind le buzzer
 			pi_sleep(200); // attend 200ms
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port du Buzzer 
 		        pi_sleep(200); // attend 200ms
-		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
+		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind le buzzer
 			pi_sleep(200); // attend 200ms
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port du Buzzer 
 		        pi_sleep(200); // attend 200ms
-		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
+		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind le buzzer
 			pi_sleep(200); // attend 200ms
-			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port LED 
+			digitalWrite(BUZZER,1); // envoie "HIGH" sur le port du Buzzer 
 		        pi_sleep(200); // attend 200ms
-		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind la LED
-			//On active la LED et le buzzer pour indiquer au visiteur que le code est faux
+		        digitalWrite(BUZZER,0); // envoie "LOW" : éteind le buzzer
+			//On active le buzzer pour indiquer au visiteur que le code est faux
 		
 			printf("Code incorrect ! Vos 3 essais ont été utilisés ! \n");
 		
