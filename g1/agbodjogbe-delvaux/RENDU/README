@@ -1,0 +1,29 @@
+Yves-alain Agbodjogbe & Mehdi Delvaux 
+
+Projet : Projection de couleurs d'ambiance selon le volume sonore et le nombre de personnes dans une pièce du musée Fabre
+
+Hiérarchie des fichier : 
+
+1 - src
+	- Compilation.c : Les commandes pour la compilation des programmes
+	- grovepi.c : Fonction pour utilisation des capteurs
+	- grovepi.h : Descripteur des fonctions du grovepi.c
+	- grovepi_image.c : Fichier regroupant les fonctions servant à l'adaptation de l'image projetée par 
+	  rapport au son
+	- grovepi_menucpt.c : Fichier regroupant les fonctions servant à adapter la lumière des lampe 
+	  au nombre de personnes
+
+
+2 - bin
+	- changement_image : Programme pour la gestion des images en fonction du niveau sonore
+	- changement_lampe : Programme pour la gestion des lumières en fonction du nombre de personnes
+
+3 - Yeecli: Ensemble des fichiers servant a installer et a utiliser l'utilitaire yeecli
+
+4 - image : Les différentes image utilisée par le programme "changement_image"
+
+5 - synthese_Agbodjogbe_Delvaux.pdf : Rendu PDF du projet
+
+
+
+
