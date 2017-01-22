@@ -65,12 +65,12 @@ int main(void)
 	{
 		// Le choix 1 permet de gérer manuelement les entrées sorties dans la pièce, permet une meilleur visualisation du changement de couleur de l'ampoule
 		case 1:
-    		{	int c = 0;
-    			nbpersonne =0;
-    			printf("Vous avez choisi de gérer les entrées sortie a la main\n\n");
-    			// Tant que la salle n'est pas pleine ou que l'on essaye pas de faire sortir des gens d'une salle qui est vide
-    			while (nbpersonne <21 && nbpersonne >=0)
-    			{
+    		{ int c = 0;
+    		  nbpersonne =0;
+    		  printf("Vous avez choisi de gérer les entrées sortie a la main\n\n");
+    		  // Tant que la salle n'est pas pleine ou que l'on essaye pas de faire sortir des gens d'une salle qui est vide
+    		  while (nbpersonne <21 && nbpersonne >=0)
+    		  {
     			printf("Appuyer sur 1 pour entrer :\n");
     			printf("Appuyer sur 0 pour sortir :\n");
     			scanf("%d",&c);
@@ -78,21 +78,21 @@ int main(void)
     			{
     				// Décrementation de la couleur
     				nbpersonne=nbpersonne+1;
-	  				increment -=3;
-					change_color(increment,0,ip);
-	  				printf("Une personne vient de rentrer\n");
-					printf("Nombre de personne : %d\n",nbpersonne);
+	  			increment -=3;
+				change_color(increment,0,ip);
+	  			printf("Une personne vient de rentrer\n");
+				printf("Nombre de personne : %d\n",nbpersonne);
     			}
     			else if(c == 0)
     			{
     				nbpersonne=nbpersonne-1;
-                	increment +=3;
-					change_color(increment,1,ip);        
-               	    printf("Une personne vient de sortir\n");
-                    printf("Nombre de personne : %d\n",nbpersonne);
+                		increment +=3;
+				change_color(increment,1,ip);        
+               	    		printf("Une personne vient de sortir\n");
+                    		printf("Nombre de personne : %d\n",nbpersonne);
     			}
 
- 				}
+ 		  }
         	
     		} break;
 
@@ -115,7 +115,7 @@ int main(void)
 
 
 			  	// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
-			    //>>>> detection d'un individu entre le capteur et le mur d'en face  
+			    	//>>>> detection d'un individu entre le capteur et le mur d'en face  
 				if (data1 < distance)
 			  	{	
 
@@ -129,7 +129,7 @@ int main(void)
 					data2=r_buf[1]*256 + r_buf[2];
 				
 					// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
-			    	//>>>> detection d'un individu entre le capteur et le mur d'en face   
+			    		//>>>> detection d'un individu entre le capteur et le mur d'en face   
 			  		if(data2 < distance)
 			  			{	
 			  			// Une personne vient de rentrer donc on incrémente
@@ -162,7 +162,7 @@ int main(void)
 					data2= r_buf[1]*256 + r_buf[2];
 			
 					// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
-			    	//>>>> detection d'un individu entre le capteur et le mur d'en face   
+			    		//>>>> detection d'un individu entre le capteur et le mur d'en face   
 					if (data2 < distance)
 		         		{
 		               			pi_sleep(100);
@@ -174,8 +174,8 @@ int main(void)
 		                		read_block();
 		               			data1=r_buf[1]*256 + r_buf[2];
 				
-		                			// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
-			    				//>>>> detection d'un individu entre le capteur et le mur d'en face   
+		                		// Si la distance lu par ce capteur est inferieur a la distance entre le capteur et le mur face au capteur
+			    			//>>>> detection d'un individu entre le capteur et le mur d'en face   
 		                		if(data1 < distance)
 		                		{   
 		                			// Une personne vient de sortir
