@@ -6,8 +6,6 @@
 #include "stdio.h"
 #include "string.h"
 
-//Compilation : gcc grovepi_sound.c grovepi.c -Wall -o grovepi_sound
-//Execution : sudo ./grovepi_sound
 
 int main(void)
 {
@@ -18,7 +16,7 @@ int main(void)
   }
   else 
   {
-  // Capteur de son sur le port A0 en lecture
+  // Capteur de temperature sur le port A0
   int PIN = 0;
   pinMode(PIN,0);
 
