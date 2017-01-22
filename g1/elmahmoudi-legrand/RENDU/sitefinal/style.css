@@ -1,0 +1,70 @@
+body{
+
+border-style:groove;
+margin-top:0%;
+margin-left:20%;
+margin-right:17.4%;
+
+}
+
+html{
+
+background-image:url(../images/image.jpg);
+
+background-color: #225A64;
+
+}
+h3{
+margin-left:0.5%;
+}
+p{
+margin-left:2%;
+margin-right:2%;
+text-align:justify;
+}
+#onglets
+{
+    font : bold 11px Batang, arial, serif;
+    list-style-type : none;
+    padding-bottom : 24px; /* à modifier suivant la taille de la police ET de la hauteur de l'onglet dans #onglets li */
+    border-bottom : 1px solid #9EA0A1;
+    margin-left : 0;
+}
+#onglets li
+{
+    float : left;
+    height : 21px; /* à modifier suivant la taille de la police pour centrer le texte dans l'onglet */
+    background-color:  #D0EDEF;
+    margin : 2px 2px 0 2px !important;  /* Pour les navigateurs autre que IE */
+    margin : 1px 2px 0 2px;  /* Pour IE  */
+    border : 1px solid #9EA0A1;
+}
+#onglets li.active
+{
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+#onglets a
+{
+    display : block;
+    color : #9EA0A1 ;
+    text-decoration : none;
+    padding : 4px;
+}
+#onglets a:hover
+{
+    background : blue;
+}
+
+table
+{
+
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+    text-align:center;
+    margin:auto;
+}
+td
+{
+ margin-left:15%;
+ border: 1px solid black;
+}
