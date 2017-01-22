@@ -34,9 +34,9 @@ int main (void){
 	int luminosite; // luminosite ambiante
 
  
-	Ultrason u1 = {4, 41, "Tout droit'"}; // creation d'une structure
+	Ultrason u1 = {8, 41, "Tout droit'"}; // creation d'une structure
 	Ultrason u2 = {7, 41, "A Gauche'"};
-	Ultrason u3 = {3, 41, "A droite'"};
+	Ultrason u3 = {4, 41, "A droite'"};
 	Ultrason ultrasons []={u1,u2,u3} ;// creation d'un tableau de structure
 	const int nbCapteur=2 ;  // nombre de capteur ultrasons
 	const char * pathCmd = "/home/nepo/projet/sortieJack.sh ";
