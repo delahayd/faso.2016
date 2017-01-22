@@ -1,9 +1,0 @@
-<map id="src/ReconnaissanceV.c" name="src/ReconnaissanceV.c">
-<area shape="rect" id="node2" href="$ReconnaissanceV_8h.html" title="ReconnaissanceV.h" alt="" coords="312,80,451,107"/>
-<area shape="rect" id="node8" href="$BDD_8c.html" title="BDD.c" alt="" coords="350,229,413,256"/>
-<area shape="rect" id="node10" href="$LecteurBMP_8c.html" title="LecteurBMP.c" alt="" coords="223,155,329,181"/>
-<area shape="rect" id="node9" href="$BDD_8h.html" title="BDD.h" alt="" coords="350,379,413,405"/>
-<area shape="rect" id="node11" href="$LecteurBMP_8h.html" title="LecteurBMP.h" alt="" coords="195,229,301,256"/>
-<area shape="rect" id="node12" href="$Couleur_8c.html" title="Couleur.c" alt="" coords="195,304,274,331"/>
-<area shape="rect" id="node13" href="$Couleur_8h.html" title="Couleur.h" alt="" coords="195,379,274,405"/>
-</map>
