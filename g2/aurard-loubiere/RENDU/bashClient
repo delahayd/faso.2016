@@ -1,0 +1,6 @@
+#! /bin/bash
+
+for ((;;))
+do
+	eval ./client 162.38.111.16 25000
+done

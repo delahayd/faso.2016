@@ -1,0 +1,47 @@
+def quantity_to_sound(quantity)
+  # return quantity.sub('\n', '').split('.')[0]
+  return quantity.split('.')[0].to_i
+end
+
+
+def recup()
+  File.open('/home/thaisclement/distance.txt') do |file|
+    file.each_line {
+      |val|
+      return Float(quantity_to_sound(val))
+    }
+  end
+end
+
+
+def playing()
+  loop do
+    dist = recup()
+    if dist < 50
+      synth = :piano
+    elsif dist < 100
+      synth = :prophet
+    else
+      synth = :dpulse
+    end
+    
+    
+    use_synth synth
+    File.open('/home/thaisclement/donnees.txt') do |file|
+      file.each_line {
+        |line|
+        # puts ("Temp = #{line}")
+        play quantity_to_sound(line), release: 1.5
+        sleep 0.5
+      }
+    end
+  end
+end
+
+
+in_thread do
+  playing()
+end
+
+
+
