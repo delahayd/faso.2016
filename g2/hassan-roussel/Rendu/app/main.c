@@ -8,6 +8,17 @@
 
 #define us_cmd 7
 
+int detectPersonne(){
+	system("python detectPresence.py");
+        //Lire le fichier contenant le booleen
+        FILE *fp;
+        char buff[255];
+        fp = fopen("presence.txt", "r");
+        fscanf(fp, "%s", buff);
+        fclose(fp);
+        return buff[0] == 'T';
+}
+
 int main(void)
 {
 	//Exit on failure to start communications with the GrovePi
@@ -31,7 +42,7 @@ int main(void)
 				//printf("Par la condition lumière éteinte");
 			}
 			else{
-			  if (detectPersonne()){
+			  if (!detectPersonne()){
 			  	system("yee --ip=192.168.43.236 toggle");
 				//printf("Par la condition detecte une personne");
 			  }
