@@ -1,2 +1,9 @@
-AURARD thais, LOUBIERE cl�ment
-Musique au mus�e
+LOUBIERE Clément AURARD Thaïs
+projet: musique électronique générée en fonction des conditions extérieures
+
+Fichiers:
+grovepi.c, grovepi.h, grovepi_soundlib.c --> drivers utilisés pour les capteurs son et ultrasons
+serverBis.c, serverBisUltra.c --> fichiers créant des sockets en écoute sur le raspberry serveur
+clientBis.c, clientBisUltra.c --> fichiers créant des sockets de connexion sur le raspberry client
+sonic.txt --> fichier contenant le code lu par Sonic-pi sur le raspberry client
+bashClient, bashUltraClient --> exécutables permettant d'exécuter en boucle les fichiers clientBis.c et clientBisUltra.c
