@@ -1,4 +1,4 @@
-EFFECTS = ["None", "Warhol", "Four"]
+EFFECTS = ["None", "Warhol", "Four"] #a finir
 
 SCREEN_W = 800 ## raspi touch
 SCREEN_H = 480 ## raspi touch
