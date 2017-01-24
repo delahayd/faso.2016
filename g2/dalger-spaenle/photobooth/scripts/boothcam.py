@@ -1,6 +1,6 @@
-from subprocess import call
+from subprocess import call #appel systeme 
 import tkFileDialog
-import glob
+import glob #recuperer dossier recursivement
 import os
 import os.path
 import time
@@ -97,39 +97,10 @@ def snap(can, countdown1, effect='None'):
             call(command)
         camera = mycamera.PiCamera()
         countdown(camera, can, countdown1)
-        if effect == 'None':
-            camera.capture(custom.RAW_FILENAME, resize=(1366, 768))
-            snapshot = Image.open(custom.RAW_FILENAME)
-        elif effect == 'Warhol': 
-            setLights(255, 0, 0) ## RED
-            camera.capture(custom.RAW_FILENAME[:-4] + '_1.' + custom.EXT, resize=(683, 384))
-            setLights(0, 255, 0) ## GREEN
-            camera.capture(custom.RAW_FILENAME[:-4] + '_2.' + custom.EXT, resize=(683, 384))
-            setLights(0, 0, 255) ## BLUE
-            camera.capture(custom.RAW_FILENAME[:-4] + '_3.' + custom.EXT, resize=(683, 384))
-            setLights(180, 180, 0) ## yellow of same intensity
-            camera.capture(custom.RAW_FILENAME[:-4] + '_4.' + custom.EXT, resize=(683, 384))
+        camera.capture(custom.RAW_FILENAME, resize=(1366, 768))
+        snapshot = Image.open(custom.RAW_FILENAME)
 
-            snapshot = Image.new('RGBA', (1366, 768))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_1.' + custom.EXT).resize((683, 384)), (  0,   0,  683, 384))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_2.' + custom.EXT).resize((683, 384)), (683,   0, 1366, 384))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_3.' + custom.EXT).resize((683, 384)), (  0, 384,  683, 768))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_4.' + custom.EXT).resize((683, 384)), (683, 384, 1366, 768))
-        elif effect == "Four":
-            # take 4 photos and merge into one image.
-            camera.capture(custom.RAW_FILENAME[:-4] + '_1.' + custom.EXT, resize=(683, 384))
-            countdown(camera, can, custom.countdown2)
-            camera.capture(custom.RAW_FILENAME[:-4] + '_2.' + custom.EXT, resize=(683, 384))
-            countdown(camera, can, custom.countdown2)
-            camera.capture(custom.RAW_FILENAME[:-4] + '_3.' + custom.EXT, resize=(683, 384))
-            countdown(camera, can, custom.countdown2)
-            camera.capture(custom.RAW_FILENAME[:-4] + '_4.' + custom.EXT, resize=(683, 384))
 
-            snapshot = Image.new('RGBA', (1366, 768))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_1.' + custom.EXT).resize((683, 384)), (  0,   0,  683, 384))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_2.' + custom.EXT).resize((683, 384)), (683,   0, 1366, 384))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_3.' + custom.EXT).resize((683, 384)), (  0, 384,  683, 768))
-            snapshot.paste(Image.open(custom.RAW_FILENAME[:-4] + '_4.' + custom.EXT).resize((683, 384)), (683, 384, 1366, 768))
             
         camera.close()
             

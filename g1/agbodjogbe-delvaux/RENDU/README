@@ -15,8 +15,8 @@ Hiérarchie des fichier :
 
 
 2 - bin
-	- changement_image : Programme pour la gestion des images en fonction du niveau sonore
-	- changement_lampe : Programme pour la gestion des lumières en fonction du nombre de personnes
+	- changement_image : Executable pour la gestion des images en fonction du niveau sonore
+	- changement_lampe : Executable pour la gestion des lumières en fonction du nombre de personnes
 
 3 - Yeecli: Ensemble des fichiers servant a installer et a utiliser l'utilitaire yeecli
 

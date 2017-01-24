@@ -136,23 +136,5 @@ def getAlbums(email):
         entries.append(entry)
     return entries
 
-def test():
-    if False:
-        entries = getAlbums(email="kevin.osborn@gmail.com")
-    else:
-        entries = map(str, range(1000))
 
-    root = Tkinter.Tk()
-    entrybox = Tkinter.Entry(root, width=80)
-    entrybox.pack()
-    AlbumSelect(root, entrybox, entries)
-    root.mainloop()
-    
-if __name__ == '__main__':
-    import sys
-    if len(sys.argv) > 1:
-        if sys.argv[1] == 'gui':
-            test()
-    else:
-        for l in getAlbums(email="kevin.osborn@gmail.com"):
-            print l
+  

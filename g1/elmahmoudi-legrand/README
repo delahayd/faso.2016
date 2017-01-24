@@ -1,3 +1,62 @@
-Achraf EL MAHMOUDI
-Cyprien LEGRAND
-Domotique et sécurité // Surveillance habitation avec capteurs en wifi
+LISTE DES FICHIERS UTILES POUR LA COMPREHENSION DU SYSTEME DE SURVEILLANCE
+
+
+Dans le dossier "Fas final":
+
+
+    Fichiers codes --> Executables
+-----------------------------------------------
+● Grovepi_surveillance.c → LancerLaSurveillance
+
+	○ Grovepi_c
+
+              ○ Grovepi_h
+
+● Envoiemail.c → EnvoiMail
+
+● CompileETenvoi_Mail.c → CompileMail
+
+● usermail.txt
+
+------------------------------------------------
+
+DETAILS
+
+- Grovepi_surveillance.c - LancerLaSurveillance
+
+	Le système repose sur un programme principal ​LancerLaSurveillance dont le code se trouve dans
+	grovepi_surveillance.c.
+	Ce programme permet de lancer le système de Surveillance, c’est à dire que si le capteur ultrason détecte un
+	mouvement*, une série de 5 photos va être prise; les photos sont envoyées par mail ​ puis supprimées. 
+	Une autre série de 10 photos s’enchaine ensuite. Ces photos là seront stockés dans photos/ et donc accessibles depuis le site web.
+
+* Pour un résultat satisfaisant, le programme recupère d'abord la distance moyenne entre l'émission et la réception d'un signal dans la pièce. Si la distance récuperée est inferieure à 80% de cette moyenne (pour éviter les faux positifs); alors on lance le système de photo.
+
+LancerLaSurveillance va appeller la procédure CompileMail.
+
+
+
+- CompileETenvoi_MAil.c - CompileMail
+
+	Cette petite procédure permet tout simplement de compiler le fichier c qui gestionne l’envoi du mail ​ et de l'exécuter. On a besoin de compiler le code de l'envoi Mail à chaque fois étant donné que l'adresse mail de l'utilisateur peut etre emmener à changer.
+
+
+- Envoiemail.c  - EnvoiMail
+
+Tout d’abord, il faut savoir que l’envoi des emails depuis le raspberry est géré par un serveur sSTMP,
+configuré au préalable avec l’adresse d’expédition igrasp05@gmail.com​.
+L’adresse du destinataire est récupérée par le site web, où l’utilisateur renseigne son adresse email. Elle est stockée
+dans le fichier usermail.txt​.
+Envoimail.c va récupérer cette adresse email et envoyer l’ensemble des photos via la commande mutt.
+
+
+Dans le dossier "sitefinal" : 
+
+En gardant l'arborescence, mettre les fichiers et dossiers dans le dossier /var/www/html du Raspberry
+
+- usermail.txt
+
+Fichier qui stocke l'adresse email de l'utilisateur. Dans le site php, "modification mail" permet de modifier ce fichier.
+
+- Autres fichiers php :
+Permettent la navigation sur le site et la réalisation des différentes actions

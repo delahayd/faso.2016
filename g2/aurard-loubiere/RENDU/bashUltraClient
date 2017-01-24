@@ -1,0 +1,6 @@
+#! /bin/bash
+
+for ((;;))
+do
+	eval ./ultraClient 162.38.111.16 25001
+done

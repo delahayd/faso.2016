@@ -19,9 +19,9 @@ def restore_conf():
     if not os.path.exists(conf_filename):
         conf_file = open(conf_filename, 'w')
         default_conf = '''[main]
-emailsubject = Your Postcard from the Wyolum Photobooth
-emailmsg = Here's your picture from the http://wyolum.com photobooth!
-photocaption = postcard from the xxx event
+emailsubject = ChloeMahe photobooth
+emailmsg = Voila ta photo!
+photocaption = postcard from polytech
 logopng = logo.png
 
 albumid = None
@@ -40,7 +40,6 @@ oauth2_refresh_period = 1800000
 
     conf = ConfigParser.ConfigParser()
     conf.read(conf_filename)
-
     emailSubject = conf.get('main', 'emailSubject') 
     emailMsg = conf.get('main', 'emailMsg')
     logopng = conf.get('main', 'logopng')
@@ -96,6 +95,7 @@ def ispi():
     return os.path.exists('/dev/ttyS0')
 
 logo_label = None
+
 def display_logo(parent, logopng):
     global logo_label
     if ispi():
