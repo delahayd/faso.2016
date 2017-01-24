@@ -1,6 +1,6 @@
-from subprocess import call
+from subprocess import call #appel systeme 
 import tkFileDialog
-import glob
+import glob #recuperer dossier recursivement
 import os
 import os.path
 import time
