@@ -1,5 +1,5 @@
 import time
-import numpy as np
+import numpy as np  #manipuler tableau
 import cv2
 
 class Camera:
