@@ -1,5 +1,5 @@
 #set these up in your google account
-import getpass
+import getpass #recuperer saisie clavier
 import os.path
 
 install_dir = os.path.split(os.path.abspath(__file__))[0]
