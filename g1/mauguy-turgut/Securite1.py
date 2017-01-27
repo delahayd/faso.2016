@@ -45,7 +45,7 @@ tempsDepuisDerniereCo = time.time()
 
 
 while True:
-	if(time.time() > tempsDepuisDerniereCo + 10):
+	if(time.time() > tempsDepuisDerniereCo + 15):
 		parametre =fonctions.getParametre(fonctions.getMAC("eth0"))
 		mail = parametre["mail"]
 		infSup = parametre["infSup"]
